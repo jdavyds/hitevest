@@ -1,0 +1,1160 @@
+.plansSection {
+    width: 100%;
+    margin: 0 auto;
+    padding: 65px 0 50px 0;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+
+    .shadowImage {
+        position: absolute;
+        top: 0;
+        right: -30px;
+    };
+
+    .plansWrapper {
+        height: 450px;
+        width: 70%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+    
+        .plansText {
+            width: 40%;
+            padding-left: 30px;
+            color: #0B3A5A;
+            font-size: 60px;
+            font-weight: 500;
+        };
+    
+        .imageWrapper {
+            height: 100%;
+            width: 60%;
+            position: relative;
+    
+            img {
+                position: absolute;
+
+                &:nth-child(1) {
+                    height: 650px;
+                    left: -17%;
+                    top: -100px;
+                };
+                &:nth-child(2) {
+                    width: 84%;
+                    right: 20px;
+                    top: 30px;
+                };
+            };
+        };
+    };
+};
+
+
+.investmentPlans {
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 0;
+    background: rgba(180, 200, 214, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    h1 {
+        width: 70%;
+        color: #0B3A5A;
+        font-size: 2.5rem;
+        font-weight: 600;
+        line-height: 1.43;
+        text-align: center
+    };
+    p {
+        margin: 20px 0;
+        color: #494848;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 0.5px;
+        text-align: center;
+        text-transform: capitalize;
+    };
+
+    .planTypeWrapper {
+        padding-bottom: 20px;
+        display: flex;
+        justify-content: center;
+
+        .singlePlanTypeWrapper {
+            width: 309.3px;
+            background: #FFFFFF;
+            border: 1px solid #DBDBDB;
+            box-sizing: border-box;
+            box-shadow: 0px 4px 5px 1px rgba(193, 193, 193, 0.35);
+            border-radius: 4px;
+            padding: 15px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+
+            &:nth-child(1) {
+                margin-right: 20px
+            };
+            &:nth-child(2) {
+                margin-left: 20px
+            };
+
+            img {
+                width: 64px;
+                height: 64px;
+            };
+
+            h1 {
+                width: 70%;
+                color: #0B3A5A;
+                font-size: 2.5rem;
+                font-weight: 600;
+                line-height: 1.43;
+                text-align: center
+            };
+
+            ul {
+                width: 100%;
+                list-style-type: none;
+                margin-top: 10px;
+                padding: 0 30px;
+
+                li {
+                    padding: 10px 0;
+                    display: flex;
+                    align-items: center;
+                    img {
+                        height: 20px;
+                        width: 20px;
+                        margin-right: 10px
+                    };
+                    
+                    span {
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 14px;
+                        line-height: 24px;
+                        letter-spacing: 0.5px;
+                        text-transform: capitalize;
+                        color: #494848;
+                    };
+                };
+            };
+
+            .bookNowButton {
+                margin-top: 20px;
+                background: #0B3A5A;
+                border: 3px solid #0B3A5A;
+                box-sizing: border-box;
+                border-radius: 3px;
+                color: #FFFFFF;
+                padding: 14px 75px;
+            };
+        };
+    };
+};
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1441px) {
+    .plansSection {
+        width: 100%;
+        margin: 0 auto;
+        padding: 65px 0 0 0;
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+        overflow: hidden;
+    
+        .shadowImage {
+            width: 600px;
+            position: absolute;
+            top: 0;
+            right: -30px;
+        };
+    
+        .plansWrapper {
+            // height: 400px;
+            width: 70%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        
+            .tAndcText {
+                width: 40%;
+                padding-left: 30px;
+                color: #0B3A5A;
+                font-size: 50px;
+                font-weight: 600;
+            };
+        
+            .imageWrapper {
+                height: 100%;
+                width: 60%;
+                position: relative;
+        
+                img {
+                    position: absolute;
+    
+                    &:nth-child(1) {
+                        height: 850px;
+                        left: -25%;
+                        top: -190px;
+                    };
+                    &:nth-child(2) {
+                        width: 83%;
+                        right: 20px;
+                        top: 30px;
+                    };
+                };
+            };
+        };
+    };
+
+    .investmentPlans {
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px 0;
+        background: rgba(180, 200, 214, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+        h1 {
+            width: 70%;
+            color: #0B3A5A;
+            font-size: 2.5rem;
+            font-weight: 600;
+            line-height: 1.43;
+            text-align: center
+        };
+        p {
+            margin: 20px 0;
+            color: #494848;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 24px;
+            letter-spacing: 0.5px;
+            text-align: center;
+            text-transform: capitalize;
+        };
+
+        .planTypeWrapper {
+            padding-bottom: 20px;
+            display: flex;
+            justify-content: center;
+
+            .singlePlanTypeWrapper {
+                width: 309.3px;
+                background: #FFFFFF;
+                border: 1px solid #DBDBDB;
+                box-sizing: border-box;
+                box-shadow: 0px 4px 5px 1px rgba(193, 193, 193, 0.35);
+                border-radius: 4px;
+                padding: 15px 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+
+                &:nth-child(1) {
+                    margin-right: 20px
+                };
+                &:nth-child(2) {
+                    margin-left: 20px
+                };
+
+                img {
+                    width: 64px;
+                    height: 64px;
+                };
+
+                h1 {
+                    width: 70%;
+                    color: #0B3A5A;
+                    font-size: 2.5rem;
+                    font-weight: 600;
+                    line-height: 1.43;
+                    text-align: center
+                };
+
+                ul {
+                    width: 100%;
+                    list-style-type: none;
+                    margin-top: 10px;
+                    padding: 0 30px;
+
+                    li {
+                        padding: 10px 0;
+                        display: flex;
+                        align-items: center;
+                        img {
+                            height: 20px;
+                            width: 20px;
+                            margin-right: 10px
+                        };
+                        
+                        span {
+                            font-style: normal;
+                            font-weight: normal;
+                            font-size: 14px;
+                            line-height: 24px;
+                            letter-spacing: 0.5px;
+                            text-transform: capitalize;
+                            color: #494848;
+                        };
+                    };
+                };
+
+                .bookNowButton {
+                    margin-top: 20px;
+                    background: #0B3A5A;
+                    border: 3px solid #0B3A5A;
+                    box-sizing: border-box;
+                    border-radius: 3px;
+                    color: #FFFFFF;
+                    padding: 14px 75px;
+                };
+            };
+        };
+    };
+};
+@media screen and (max-width: 1440px) {
+    .plansSection {
+        width: 100%;
+        margin: 0 auto;
+        padding: 65px 0 40px 0;
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+        overflow: hidden;
+    
+        .shadowImage {
+            width: 500px;
+            position: absolute;
+            top: 0;
+            right: -30px;
+        };
+    
+        .plansWrapper {
+            height: 350px;
+            width: 70%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        
+            .plansText {
+                width: 40%;
+                padding-left: 30px;
+                color: #0B3A5A;
+                font-size: 35px;
+                font-weight: 500;
+            };
+        
+            .imageWrapper {
+                height: 100%;
+                width: 60%;
+                position: relative;
+        
+                img {
+                    position: absolute;
+    
+                    &:nth-child(1) {
+                        height: 550px;
+                        left: -18%;
+                        top: -145px;
+                    };
+                    &:nth-child(2) {
+                        width: 85%;
+                        right: 20px;
+                        top: 30px;
+                    };
+                };
+            };
+        };
+    };
+
+    .investmentPlans {
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px 0 40px 0;
+        background: rgba(180, 200, 214, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+    
+        h1 {
+            width: 70%;
+            color: #0B3A5A;
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.43;
+            text-align: center
+        };
+        p {
+            margin: 20px 0;
+            color: #494848;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 18px;
+            letter-spacing: 0.5px;
+            text-align: center;
+            text-transform: capitalize;
+        };
+    
+        .planTypeWrapper {
+            padding-bottom: 20px;
+            display: flex;
+            justify-content: center;
+    
+            .singlePlanTypeWrapper {
+                width: 309.3px;
+                background: #FFFFFF;
+                border: 1px solid #DBDBDB;
+                box-sizing: border-box;
+                box-shadow: 0px 4px 5px 1px rgba(193, 193, 193, 0.35);
+                border-radius: 4px;
+                padding: 15px 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+    
+                &:nth-child(1) {
+                    margin-right: 20px
+                };
+                &:nth-child(2) {
+                    margin-left: 20px
+                };
+    
+                img {
+                    width: 50px;
+                    height: 50px;
+                };
+    
+                h1 {
+                    width: 70%;
+                    color: #0B3A5A;
+                    font-size: 2rem;
+                    font-weight: 600;
+                    line-height: 1.43;
+                    text-align: center
+                };
+    
+                ul {
+                    width: 100%;
+                    list-style-type: none;
+                    margin-top: 10px;
+                    padding: 0 30px;
+    
+                    li {
+                        padding: 10px 0;
+                        display: flex;
+                        align-items: center;
+                        img {
+                            height: 20px;
+                            width: 20px;
+                            margin-right: 10px
+                        };
+                        
+                        span {
+                            font-style: normal;
+                            font-weight: normal;
+                            font-size: 14px;
+                            line-height: 24px;
+                            letter-spacing: 0.5px;
+                            text-transform: capitalize;
+                            color: #494848;
+                        };
+                    };
+                };
+    
+                .bookNowButton {
+                    margin-top: 20px;
+                    background: #0B3A5A;
+                    border: 3px solid #0B3A5A;
+                    box-sizing: border-box;
+                    border-radius: 3px;
+                    color: #FFFFFF;
+                    padding: 14px 75px;
+                };
+            };
+        };
+    };
+};
+@media screen and (max-width: 1024px) {
+    .plansSection {
+        width: 100%;
+        margin: 0 auto;
+        padding: 65px 0 40px 0;
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+        overflow: hidden;
+    
+        .shadowImage {
+            width: 400px;
+            position: absolute;
+            top: 0;
+            right: -30px;
+        };
+    
+        .plansWrapper {
+            height: 250px;
+            width: 70%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        
+            .plansText {
+                width: 40%;
+                padding-left: 30px;
+                color: #0B3A5A;
+                font-size: 30px;
+                font-weight: 500;
+            };
+        
+            .imageWrapper {
+                height: 100%;
+                width: 60%;
+                position: relative;
+        
+                img {
+                    position: absolute;
+    
+                    &:nth-child(1) {
+                        height: 450px;
+                        left: -20%;
+                        top: -130px;
+                    };
+                    &:nth-child(2) {
+                        width: 84%;
+                        right: 20px;
+                        top: 30px;
+                    };
+                };
+            };
+        };
+    };
+
+    .investmentPlans {
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px 0 40px 0;
+        background: rgba(180, 200, 214, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+    
+        h1 {
+            width: 70%;
+            color: #0B3A5A;
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 1.43;
+            text-align: center
+        };
+        p {
+            margin: 10px 0 15px 0;
+            color: #494848;
+            font-weight: normal;
+            font-size: 10px;
+            line-height: 15px;
+            letter-spacing: 0.5px;
+            text-align: center;
+            text-transform: capitalize;
+        };
+    
+        .planTypeWrapper {
+            padding-bottom: 20px;
+            display: flex;
+            justify-content: center;
+    
+            .singlePlanTypeWrapper {
+                width: 220px;
+                background: #FFFFFF;
+                border: 1px solid #DBDBDB;
+                box-sizing: border-box;
+                box-shadow: 0px 4px 5px 1px rgba(193, 193, 193, 0.35);
+                border-radius: 4px;
+                padding: 15px 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+    
+                &:nth-child(1) {
+                    margin-right: 20px
+                };
+                &:nth-child(2) {
+                    margin-left: 20px
+                };
+    
+                img {
+                    width: 40px;
+                    height: 40px;
+                };
+    
+                h1 {
+                    width: 70%;
+                    color: #0B3A5A;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    line-height: 1.43;
+                    text-align: center
+                };
+    
+                ul {
+                    width: 100%;
+                    list-style-type: none;
+                    margin-top: 10px;
+                    padding: 0 20px;
+    
+                    li {
+                        padding: 4px 0;
+                        display: flex;
+                        align-items: center;
+                        img {
+                            height: 12px;
+                            width: 12px;
+                            margin-right: 10px
+                        };
+                        
+                        span {
+                            font-style: normal;
+                            font-weight: normal;
+                            font-size: 8px;
+                            line-height: 24px;
+                            letter-spacing: 0.5px;
+                            text-transform: capitalize;
+                            color: #494848;
+                        };
+                    };
+                };
+    
+                .bookNowButton {
+                    margin-top: 10px;
+                    background: #0B3A5A;
+                    border: 3px solid #0B3A5A;
+                    box-sizing: border-box;
+                    border-radius: 3px;
+                    color: #FFFFFF;
+                    font-size: 8px;
+                    padding: 8px 50px;
+                };
+            };
+        };
+    };
+};
+@media screen and (max-width: 991px) {
+    
+};
+@media screen and (max-width: 768px) {
+    .plansSection {
+        width: 100%;
+        margin: 0 auto;
+        padding: 65px 0 10px 0;
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+        overflow: hidden;
+    
+        .shadowImage {
+            width: 350px;
+            position: absolute;
+            top: 0;
+            right: -30px;
+        };
+    
+        .plansWrapper {
+            height: 230px;
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        
+            .plansText {
+                width: 40%;
+                color: #0B3A5A;
+                font-size: 19px;
+                font-weight: 600;
+            };
+        
+            .imageWrapper {
+                height: 100%;
+                width: 60%;
+                position: relative;
+        
+                img {
+                    position: absolute;
+    
+                    &:nth-child(1) {
+                        height: 310px;
+                        left: -18%;
+                        top: -60px;
+                    };
+                    &:nth-child(2) {
+                        width: 84%;
+                        right: 20px;
+                        top: 30px;
+                    };
+                };
+            };
+        };
+    };
+
+    .investmentPlans {
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px 0 40px 0;
+        background: rgba(180, 200, 214, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+    
+        h1 {
+            width: 70%;
+            color: #0B3A5A;
+            font-size: 1.2rem;
+            font-weight: 600;
+            line-height: 1.43;
+            text-align: center
+        };
+        p {
+            margin: 10px 0 15px 0;
+            color: #494848;
+            font-weight: normal;
+            font-size: 8px;
+            line-height: 15px;
+            letter-spacing: 0.5px;
+            text-align: center;
+            text-transform: capitalize;
+        };
+    
+        .planTypeWrapper {
+            padding-bottom: 20px;
+            display: flex;
+            justify-content: center;
+    
+            .singlePlanTypeWrapper {
+                width: 180px;
+                background: #FFFFFF;
+                border: 1px solid #DBDBDB;
+                box-sizing: border-box;
+                box-shadow: 0px 4px 5px 1px rgba(193, 193, 193, 0.35);
+                border-radius: 4px;
+                padding: 15px 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+    
+                &:nth-child(1) {
+                    margin-right: 15px
+                };
+                &:nth-child(2) {
+                    margin-left: 15px
+                };
+    
+                img {
+                    width: 30px;
+                    height: 30px;
+                };
+    
+                h1 {
+                    width: 70%;
+                    color: #0B3A5A;
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    line-height: 1.43;
+                    text-align: center
+                };
+    
+                ul {
+                    width: 100%;
+                    list-style-type: none;
+                    margin-top: 10px;
+                    padding: 0 20px;
+    
+                    li {
+                        padding: 2px 0;
+                        display: flex;
+                        align-items: center;
+                        img {
+                            height: 10px;
+                            width: 10px;
+                            margin-right: 10px
+                        };
+                        
+                        span {
+                            font-style: normal;
+                            font-weight: normal;
+                            font-size: 7px;
+                            line-height: 24px;
+                            letter-spacing: 0.5px;
+                            text-transform: capitalize;
+                            color: #494848;
+                        };
+                    };
+                };
+    
+                .bookNowButton {
+                    margin-top: 10px;
+                    background: #0B3A5A;
+                    border: 3px solid #0B3A5A;
+                    box-sizing: border-box;
+                    border-radius: 3px;
+                    color: #FFFFFF;
+                    font-size: 7px;
+                    padding: 5px 40px;
+                };
+            };
+        };
+    };
+};
+@media screen and (max-width: 575px) {
+    .plansSection {
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 65px;
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+        overflow: hidden;
+    
+        .shadowImage {
+            width: 300px;
+            position: absolute;
+            top: 0;
+            right: -30px;
+        };
+    
+        .plansWrapper {
+            height: 180px;
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        
+            .plansText {
+                width: 40%;
+                color: #0B3A5A;
+                font-size: 19px;
+                font-weight: 600;
+            };
+        
+            .imageWrapper {
+                height: 100%;
+                width: 60%;
+                position: relative;
+        
+                img {
+                    position: absolute;
+    
+                    &:nth-child(1) {
+                        height: 210px;
+                        left: -10%;
+                        top: -20px;
+                    };
+                    &:nth-child(2) {
+                        width: 75%;
+                        right: 40px;
+                        top: 30px;
+                    };
+                };
+            };
+        };
+    };
+
+    .investmentPlans {
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px 0;
+        background: rgba(180, 200, 214, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+    
+        h1 {
+            width: 70%;
+            color: #0B3A5A;
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.43;
+            text-align: center
+        };
+        p {
+            margin: 10px 0 15px 0;
+            color: #494848;
+            font-weight: normal;
+            font-size: 8px;
+            line-height: 15px;
+            letter-spacing: 0.5px;
+            text-align: center;
+            text-transform: capitalize;
+        };
+    
+        .planTypeWrapper {
+            padding-bottom: 20px;
+            display: flex;
+            justify-content: center;
+    
+            .singlePlanTypeWrapper {
+                width: 180px;
+                background: #FFFFFF;
+                border: 1px solid #DBDBDB;
+                box-sizing: border-box;
+                box-shadow: 0px 4px 5px 1px rgba(193, 193, 193, 0.35);
+                border-radius: 4px;
+                padding: 15px 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+    
+                &:nth-child(1) {
+                    margin-right: 15px
+                };
+                &:nth-child(2) {
+                    margin-left: 15px
+                };
+    
+                img {
+                    width: 30px;
+                    height: 30px;
+                };
+    
+                h1 {
+                    width: 70%;
+                    color: #0B3A5A;
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    line-height: 1.43;
+                    text-align: center
+                };
+    
+                ul {
+                    width: 100%;
+                    list-style-type: none;
+                    margin-top: 10px;
+                    padding: 0 20px;
+    
+                    li {
+                        padding: 2px 0;
+                        display: flex;
+                        align-items: center;
+                        img {
+                            height: 10px;
+                            width: 10px;
+                            margin-right: 10px
+                        };
+                        
+                        span {
+                            font-style: normal;
+                            font-weight: normal;
+                            font-size: 7px;
+                            line-height: 24px;
+                            letter-spacing: 0.5px;
+                            text-transform: capitalize;
+                            color: #494848;
+                        };
+                    };
+                };
+    
+                .bookNowButton {
+                    margin-top: 10px;
+                    background: #0B3A5A;
+                    border: 3px solid #0B3A5A;
+                    box-sizing: border-box;
+                    border-radius: 3px;
+                    color: #FFFFFF;
+                    font-size: 7px;
+                    padding: 5px 40px;
+                };
+            };
+        };
+    };
+};
+@media screen and (max-width: 375px) {
+    .plansSection {
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 65px;
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+        overflow: hidden;
+    
+        .shadowImage {
+            width: 300px;
+            position: absolute;
+            top: 0;
+            right: -30px;
+        };
+    
+        .plansWrapper {
+            height: 115px;
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        
+            .plansText {
+                width: 40%;
+                color: #0B3A5A;
+                font-size: 10px;
+                font-weight: 600;
+            };
+        
+            .imageWrapper {
+                height: 100%;
+                width: 60%;
+                position: relative;
+        
+                img {
+                    position: absolute;
+    
+                    &:nth-child(1) {
+                        height: 180px;
+                        left: -25%;
+                        top: -20px;
+                    };
+                    &:nth-child(2) {
+                        width: 70%;
+                        right: 40px;
+                        top: 30px;
+                    };
+                };
+            };
+        };
+    };
+
+    .investmentPlans {
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px 0;
+        background: rgba(180, 200, 214, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+    
+        h1 {
+            width: 70%;
+            color: #0B3A5A;
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.43;
+            text-align: center
+        };
+        p {
+            margin: 10px 0 15px 0;
+            color: #494848;
+            font-weight: normal;
+            font-size: 8px;
+            line-height: 15px;
+            letter-spacing: 0.5px;
+            text-align: center;
+            text-transform: capitalize;
+        };
+    
+        .planTypeWrapper {
+            padding-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+    
+            .singlePlanTypeWrapper {
+                width: 180px;
+                background: #FFFFFF;
+                border: 1px solid #DBDBDB;
+                box-sizing: border-box;
+                box-shadow: 0px 4px 5px 1px rgba(193, 193, 193, 0.35);
+                border-radius: 4px;
+                padding: 15px 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+    
+                &:nth-child(1) {
+                    margin-right: 0;
+                };
+                &:nth-child(2) {
+                    margin-left: 0;
+                    margin-top: 20px
+                };
+    
+                img {
+                    width: 30px;
+                    height: 30px;
+                };
+    
+                h1 {
+                    width: 70%;
+                    color: #0B3A5A;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    line-height: 1.43;
+                    text-align: center
+                };
+    
+                ul {
+                    width: 100%;
+                    list-style-type: none;
+                    margin-top: 10px;
+                    padding: 0 20px;
+    
+                    li {
+                        padding: 2px 0;
+                        display: flex;
+                        align-items: center;
+                        img {
+                            height: 10px;
+                            width: 10px;
+                            margin-right: 10px
+                        };
+                        
+                        span {
+                            font-style: normal;
+                            font-weight: normal;
+                            font-size: 7px;
+                            line-height: 24px;
+                            letter-spacing: 0.5px;
+                            text-transform: capitalize;
+                            color: #494848;
+                        };
+                    };
+                };
+    
+                .bookNowButton {
+                    margin-top: 10px;
+                    background: #0B3A5A;
+                    border: 3px solid #0B3A5A;
+                    box-sizing: border-box;
+                    border-radius: 3px;
+                    color: #FFFFFF;
+                    font-size: 7px;
+                    padding: 5px 40px;
+                };
+            };
+        };
+    };
+};

@@ -1,0 +1,80 @@
+.container {
+    background: #fff;
+    border-radius: 30px;
+    padding: 40px 50px 20px 50px;
+    position: relative;
+}
+.container form {
+    height: 100%;
+    width: 100%;
+}
+.container h2 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+}
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+}
+.inputContainer label {
+    font-size: 13px;
+    padding: 5px 0;
+    color: #2B2828;
+}
+.inputContainer input {
+    height: 40px;
+    border: 1px solid #0C8DE6;
+    border-radius: 15px;
+    width: 380px;
+    outline: none;
+    padding: 0 10px;
+}
+.customInput {
+    display: flex;
+    height: 40px;
+    border: 1px solid #0C8DE6;
+    border-radius: 15px;
+    width: 380px;
+    background: white;
+    align-items: center;
+}
+.customInput input {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding-left: 0;
+}
+.customInput p {
+    font-size: 18px;
+    width: 40px;
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+}
+.customInput img {
+    min-width: 40px;
+}
+.container button {
+    background: #0862A0;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+.buttonCont {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+.cancel {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    border: none;
+    background: transparent !important;
+    padding: 0 !important;
+}

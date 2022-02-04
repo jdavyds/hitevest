@@ -1,0 +1,139 @@
+.mainContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.subContainer {
+    display: flex;
+    width: 70%;
+    height: 500px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 0 20px #eee;
+    position: relative;
+}
+.leftCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 25px;
+}
+.leftCont h2 {
+    text-align: center;
+    color: var(--neutral-black);
+}
+.leftCont form {
+    width: 90%;
+}
+.loginForm, .resetForm {
+    width: 70% !important;
+}
+.loginForm h2{
+    font-size: 25px;
+    padding: 15px 0;
+    text-align: center;
+    color: var(--neutral-black);
+}
+.loginInputCont {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    width: 100%;
+}
+.loginInputCont label {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--neutral-black);
+    padding: 5px 0;
+}
+.loginInputCont input {
+    border: 1px solid var(--border-color-1);
+    border-radius: 15px;
+    height: 45px;
+    outline: none;
+    padding: 0 15px;
+}
+.loginText1 button, .loginText2 a {
+    font-weight: 600;
+    font-size: 15px;
+}
+.loginText1 {
+    text-align: left;
+}
+.loginText2 {
+    text-align: center;
+}
+.loginText1 button {
+    color: var(--primary-color-blue);
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.buttonCont {
+    display: flex;
+    justify-content: center;
+}
+.submitButton {
+    border-radius: 10px;
+    border: none;
+    background: var(--primary-color-blue);
+    color: #fff;
+    height: 40px;
+    width: 70%;
+    text-align: center;
+    min-width: 200px;
+    margin: 25px 0;
+    cursor: pointer;
+}
+.otpCont {
+    margin: 40px 0;
+}
+.otpText1 {
+    font-size: 18px;
+    color: var(--neutral-black);
+    padding: 4px 0;
+    width: 80%;
+    margin: 8px auto;
+}
+.otpText2 {
+    font-size: 15px;
+    color: var(--neutral-black);
+    padding: 4px 0;
+    text-align: right;
+    width: 80%;
+    margin: 5px auto;
+}
+.otpInputCont {
+    margin: 15px 0;
+}
+.customInput {
+    display: flex;
+    border: 1px solid var(--border-color-1);
+    border-radius: 15px;
+    height: 45px;
+    outline: none;
+    margin: 5px 0;
+}
+.customInput input{
+    outline: none;
+    border: none;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    padding: 0 15px;
+    font-size: 16px;
+}
+
+.customInput button {
+    border: none;
+    background: transparent;
+    padding: 0 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.customInput button img{
+    height: 60%;
+}

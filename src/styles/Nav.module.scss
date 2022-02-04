@@ -1,0 +1,95 @@
+.appHeader {
+    height: 80px;
+    width: 100%;
+    z-index: 9999;
+    position: fixed;
+    background: white;
+    inset: 0;
+  
+    .brand__logo {
+      height: 60px;
+    }
+
+    ul {
+      list-style-type: none;
+      li {
+
+        &:last-child {
+          padding-right: 0;
+        };
+        
+        a {
+          color: #0B3A5A;
+          padding: 0 0 0 30px;
+          text-decoration: none;
+    
+          &:hover {
+            color: #9d9d9d !important;
+          };
+    
+          .registerButton {
+            margin-left: 20px;
+            margin-right: 0;
+            border: 1px solid #FF9900;
+            background: #FF9900;
+            color: #fff;
+            padding: 7px 15px;
+            cursor: pointer;
+    
+            &:hover {
+              background: transparent;
+              border: 1px solid #FF9900;
+              color: #FF9900;
+            };
+          };
+          .adminButton {
+            margin-left: 20px;
+            margin-right: 0;
+            border: 1px solid #0d486e;
+            background: #0d486e;
+            color: #fff;
+            padding: 7px 15px;
+            cursor: pointer;
+    
+            &:hover {
+              background: transparent;
+              border: 1px solid #0d486e;
+              color: #0d486e;
+            };
+          };
+        };
+      };
+    };
+  };
+
+
+
+
+
+
+
+  @media screen and (max-width: 575px) {
+    .appHeader {
+      width: 100%;
+      padding: 0 20px;
+    };
+  };
+
+  @media screen and (max-width: 425px) {
+    .appHeader {
+      width: 100%;
+      padding: 0 20px;
+    };
+  };
+
+  @media screen and (max-width: 375px) {
+    .appHeader {
+      width: 100%;
+      padding: 5px 15px;
+      box-sizing: border-box;
+
+      .brandLogo {
+        width: 120px;
+      };
+    };
+  };

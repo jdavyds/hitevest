@@ -1,0 +1,58 @@
+.topContainer {
+    display: flex;
+    justify-content: space-between;
+}
+.card {
+    border-radius: 30px;
+    background: #fff;
+    width: 48%;
+    padding: 20px;
+}
+.subCardCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.leftTag {
+    background: #EB5757;
+    border-radius: 5px;
+    color: #fff;
+    padding: 1px 3px;
+}
+.rightTag {
+    background: #56CCF2;
+    border-radius: 5px;
+    color: #fff;
+    padding: 1px 3px;
+}
+.left {
+    color: #EB5757;
+}
+.right {
+    color: #56CCF2;
+}
+.card form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.card form input {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #0C8DE6;
+    border-radius: 15px;
+    padding: 10px;
+    width: 70%;
+    outline: none;
+}
+.card form button {
+    width: 150px;
+    margin: 10px 0;
+    background: #0862A0;
+    padding: 10px 0;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+}

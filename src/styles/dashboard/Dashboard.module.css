@@ -1,0 +1,22 @@
+.mainContainer {
+    display: flex;
+    height: 100vh;
+    max-height: 100vh;
+    padding: 17.5px 25px 17.5px 0;
+}
+.leftContainer {
+    width: 250px;
+    flex: 250px;
+    max-height: 100%;
+    overflow-y: scroll;
+}
+.rightContainer {
+    width: calc(100% - 320px);
+    flex: calc(100% - 300px);
+    height: 100%;
+    background: #80CBFF1A;
+    border-radius: 80px;
+    padding: 15px 40px;
+    position: relative;
+    overflow-y: scroll;
+}

@@ -1,0 +1,103 @@
+.topContainer {
+    display: flex;
+    margin-top: 15px;
+    height: fit-content;
+    justify-content: space-between;
+}
+.bottomContainer {
+    padding: 15px;
+    background: #fff;
+    border-radius: 30px;
+    margin-top: 10px;
+}
+.active {
+    background: rgba(8, 98, 160, 0.2);
+    color: rgba(8, 98, 160, 1);
+}
+.inActive {
+    background: transparent;
+    color: #8C8888;
+}
+.tableTop {
+    display: flex;
+    justify-content: space-between;
+}
+.tableTop h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #0A75BF;
+}
+.tableDate {
+    display: flex;
+    align-items: center;
+}
+.tableDate button {
+    border-radius: 10px;
+    height: 25px;
+    width: 30px;
+    border: none;
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.tableDate button:nth-child(1) {
+    border-radius: 15px;
+    padding: 3px 5px;
+    height: auto;
+    width: auto;
+}
+.normalDate {
+    color: #575353;
+    background: rgba(196, 196, 196, 0.2);
+}
+.tableHeader {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.tableHeader div:nth-child(1) {
+    min-width: 100px;
+}
+.tableHeader div:nth-child(2) {
+    min-width: 220px;
+}
+.tableHeader div:nth-child(3) {
+    min-width: 200px;
+}
+.tableHeader div:nth-child(4) {
+    min-width: 150px;
+}
+.tableHeader div:nth-child(5) {
+    min-width: 100px;
+}
+.tableHeader div:nth-child(6) {
+    min-width: 150px;
+}
+.tableRow {
+    display: flex;
+    justify-content: space-between;
+}
+.tableRow div {
+    margin: 10px 0;
+    display: flex;
+}
+.tableRow div:nth-child(1) {
+    min-width: 100px;
+}
+.tableRow div:nth-child(2) {
+    min-width: 220px;
+}
+.tableRow div:nth-child(3) {
+    min-width: 200px;
+}
+.tableRow div:nth-child(4) {
+    min-width: 150px;
+}
+.tableRow div:nth-child(5) {
+    min-width: 100px;
+}
+.tableRow div:nth-child(6) {
+    min-width: 150px;
+}

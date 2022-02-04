@@ -1,0 +1,117 @@
+.mainContainer {
+    padding: 0 40px 10px 40px;
+    overflow-y: scroll;
+}
+.logo {
+    display: flex;
+}
+.logo img {
+    height: 60px;
+}
+.littleHeading {
+    padding: 15px 0;
+}
+.littleHeading p{
+   color: rgba(196, 196, 196, 0.8);
+   font-weight: 600;
+   font-size: 14px;
+}
+.links {
+    display: flex;
+    flex-direction: column;
+}
+.links button {
+    font-size: 16px;
+    padding: 7px 20px;
+    border-radius: 20px;
+    border: none;
+    margin: 2px 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    cursor: pointer;
+}
+.links .active {
+    background: var(--primary-color-blue);
+    color: #fff;
+}
+.links .normal {
+    background: transparent;
+    color: #C4C4C4;
+}
+.links button img {
+    padding-right: 7px;
+}
+.userCard {
+    background: #FFFFFF;
+    box-shadow: 4px 8px 8px rgba(8, 98, 160, 0.05);
+    border-radius: 20px;
+    padding: 10px 15px;
+}
+.profileImage {
+    border-radius: 50%;
+    background: linear-gradient(217.27deg, #0862A0 13.62%, #EB5757 91.44%);
+    height: 66px;
+    width: 66px;
+    margin: 0 auto;
+    padding: 3px 0 0 3px;
+}
+.subPic{
+    border-radius: 50%;
+    overflow: hidden;
+    height: 60px;
+    width: 60px;
+}
+.profileName {
+    text-align: center;
+    padding: 8px 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+.buttonCont {
+    display: flex;
+    flex-direction: column;
+}
+.activeProfileButton, .inActiveProfileButton {
+    border-radius: 15px;
+    padding: 10px 0;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin: 8px 0;
+    font-weight: 500;
+    font-size: 16px;
+}
+.activeProfileButton {
+    background: var(--primary-color-blue);
+    color: white;
+}
+.inActiveProfileButton {
+    background: rgba(8, 98, 160, 0.2);
+    color: var(--primary-color-blue);
+}
+.referalButton {
+    background: transparent;
+    color: var(--primary-color-blue);
+    padding: 3px 0;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 500;
+    font-size: 15px;
+}
+.logout {
+    background: transparent;
+    color: var(--neutral-black);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    font-weight: 500;
+    font-size: 15px;
+}
+.logout img {
+    padding-right: 4px;
+}

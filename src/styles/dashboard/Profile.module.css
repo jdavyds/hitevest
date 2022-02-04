@@ -1,0 +1,118 @@
+.profilePage {
+    margin: 20px 0;
+    padding: 20px 40px;
+    border-radius: 25px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.topCorner {
+    width: fit-content;
+    padding: 10px;
+    border-radius: 50%;
+}
+.profilePic {
+    border-radius: 50%;
+    background: linear-gradient(217.27deg, #0862A0 13.62%, #EB5757 91.44%);
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    padding: 4px;
+    display: flex;
+    align-items: flex-end;
+}
+.profilePic img {
+    border-radius: 50%;
+    min-width: 100%;
+    min-height: 100%;
+}
+.icon {
+    color: black;
+    background: white;
+    padding: 5px;
+    font-size: 1.4em;
+    border-radius: 50%;
+    transform: translateX(-35px);
+}
+.bottomCorner {
+    width: 100%;
+    margin: 50px 0;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.bottomCorner p {
+    font-size: 21px;
+    margin-bottom: 20px;
+}
+.bottomIcon {
+    margin-right: 10px;
+}
+.bottomCorner button {
+    background: inherit;
+    color: rgba(8, 98, 160, 1);
+    border: none;
+    margin: 0 20px;
+    font-size: 18px;
+}
+.leftCard, .rightCard {
+    width: 45%;
+    margin: 0 5px;
+    padding: 20px 40px;
+    border-radius: 10px;
+    border: 1px solid #65c6f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.leftCard form, .rightCard form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.leftCard label, .rightCard label {
+    width: 45%;
+    margin: 5px 0;
+    color: rgb(180, 177, 177, 0.7);
+    display: flex;
+    flex-direction: column;
+}
+.leftCard input, .rightCard input {
+    border-radius: 5px;
+    border: none;
+    padding: 5px 0;
+    outline: none;
+    color: grey;
+    background: inherit;
+    font-size: 19px;
+}
+.leftCard input.edit1, .rightCard input.edit2 {
+    border: 1px solid #65c6f3;
+    padding: 5px 10px;
+}
+.leftBtn, .rightBtn {
+    display: flex;
+    align-self: flex-end;
+}
+.leftBtn button, .rightBtn button {
+    border: 1px solid rgba(8, 98, 160, 1);
+    border-radius: 7px;
+    width: 120px;
+    padding: 5px 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    display: none;
+}
+.leftBtn button.active, .rightBtn button.active {
+    display: inline-block;
+}
+.leftBtn button:hover, .rightBtn button:hover {
+    background: white;
+    color: rgba(8, 98, 160, 1);
+}
+.leftBtn button:nth-of-type(2), .rightBtn button:nth-of-type(2) {
+    background: rgba(8, 98, 160, 1);
+    color: white;
+}

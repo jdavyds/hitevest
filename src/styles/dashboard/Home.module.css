@@ -1,0 +1,154 @@
+.cardContainer {
+    display: flex;
+    margin-top: 25px;
+    justify-content: space-between;
+}
+.homeCardCont {
+    background: #fff;
+    border-radius: 10px;
+    padding-top: 10px;
+    width: 150px;
+}
+.homeCardHeader {
+    font-size: 14px;
+    padding-left: 10px;
+    color: #4B4747;
+}
+.homeCardTotal {
+    font-size: 16px;
+}
+.homeCardStats {
+    display: flex;
+    justify-content: space-between;
+    padding:10px;
+}
+.homeCardChart {
+    display: flex;
+    overflow: hidden;
+    align-items: flex-end;
+}
+.homeCardRise, .homeCardDrop {
+    font-size: 10px;
+    border-radius: 5px;
+    height: 19px;
+    padding: 3px;
+}
+.homeCardRise img, .homeCardDrop img{
+    padding-right: 3px;
+}
+.homeCardRise{
+    color: #219653;
+    background: rgba(33, 150, 83, 0.4);
+}
+.homeCardDrop {
+    color: #F12424;
+    background: rgba(235, 87, 87, 0.4);
+}
+
+
+.bottomContainer {
+    background-color: #fff;
+    border-radius: 40px;
+    padding: 10px 25px;
+    margin-top: 15px;
+}
+.tableTop {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.tableTab {
+    display: flex;
+}
+.tableTab button {
+    padding: 7px 20px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+.active {
+    background: rgba(8, 98, 160, 0.2);
+    color: rgba(8, 98, 160, 1);
+}
+.inActive {
+    background: transparent;
+    color: #8C8888;
+}
+.tableDate {
+    display: flex;
+    align-items: center;
+}
+.tableDate button {
+    border-radius: 10px;
+    height: 25px;
+    width: 30px;
+    border: none;
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.tableDate button:nth-child(1) {
+    border-radius: 15px;
+    padding: 3px 5px;
+    height: auto;
+    width: auto;
+}
+.normalDate {
+    color: #575353;
+    background: rgba(196, 196, 196, 0.2);
+}
+
+/* Table design */
+.tableCont {
+    padding-top: 30px;
+    color: #8C8888;
+    overflow-x: scroll;
+}
+.tableHeader {
+    display: flex;
+    font-weight: 600;
+    font-size: 14px;
+}
+.tableRow {
+    display: flex;
+    font-size: 14px;
+    padding: 7px 0;
+}
+.tableHeader div:nth-child(1),.tableRow div:nth-child(1) {
+    min-width: 50px;
+    text-align: center;
+}
+.tableHeader div:nth-child(2), .tableRow div:nth-child(2) {
+    min-width: 120px;
+}
+.tableHeader div:nth-child(3), .tableRow div:nth-child(3) {
+    min-width: 180px;
+}
+.tableHeader div:nth-child(4), .tableRow div:nth-child(4) {
+    min-width: 150px;
+}
+.tableHeader div:nth-child(5), .tableRow div:nth-child(5) {
+    min-width: 150px;
+}
+.tableHeader div:nth-child(6), .tableRow div:nth-child(6) {
+    width: 100%;
+}
+
+.viewAll {
+    display: flex;
+    justify-content: right;
+}
+.viewAll button {
+    border: none;
+    background: rgba(8, 98, 160, 0.2);
+    color: rgba(8, 98, 160, 1);
+    padding: 7px 20px;
+    border-radius: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.viewAll button img {
+    padding-left: 4px;
+}

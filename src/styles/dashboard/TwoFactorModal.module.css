@@ -1,0 +1,129 @@
+.container {
+    background: #fff;
+    height: fit-content;
+    border-radius: 30px;
+    padding: 40px 50px 20px 50px;
+    position: relative;
+}
+.container main {
+    width: fit-content;
+    display: flex;
+    margin: 50px;
+}
+.container h2 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+}
+.cancel {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    border: none;
+    background: transparent !important;
+    padding: 0 !important;
+}
+.factorAuth {
+    width: 450px;
+    height: 100%;
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+.factorAuth h4 {
+    margin: 10px 0;
+}
+.copyUrl {
+    display: flex;
+    width: 380px;
+    margin: 20px 0;
+    border-radius: 30px;
+    background: #e7f0f7;
+}
+.copyUrl input {
+    height: 45px;
+    width: 280px;
+    background: inherit;
+    border: none;
+    border-radius: 15px 0 0 15px;
+    padding: 0 10px;
+    outline: none;
+}
+.copyUrl button {
+    width: 100px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0862A0;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1.1em;
+}
+.qrCode {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+}
+.otp {
+    display: flex;
+    flex-direction: column;
+}
+.otp label {
+    font-size: 13px;
+    padding: 5px 0;
+    color: #2B2828;
+}
+.otp input {
+    border: 1px solid #0C8DE6;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 40px;
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+.googleAuth {
+    width: 450px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+.content {
+    padding: 20px;
+    border: 1px solid #0C8DE6;
+    border-radius: 20px;
+}
+.googleAuth h4 {
+    margin: 10px 0;
+}
+.googleAuth p {
+    margin: 10px 0;
+    line-height: 1.6;
+    font-size: 18px;
+}
+.googleAuth button, 
+.factorBtn button {
+    margin: 20px auto;
+    min-width: 90%;
+    width: fit-content;
+    display: flex;
+    flex-wrap: nowrap;
+    align-self: center;
+    justify-content: center;
+    background: #0862A0;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 40px;
+    font-size: 1.1em;
+}

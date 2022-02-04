@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #2B2828;
+    background: #fff;
+    border-radius: 30px;
+    padding: 40px 50px 20px 50px;
+    position: relative;
+}
+.container img {
+    height: 80px;
+    margin: 20px 0;
+}
+.container h2 {
+    padding: 20px;
+}
+.container p {
+    padding: 10px;
+}
+.container button {
+    font-weight: 500;
+    font-size: 16px;
+    background: #0862A0;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+}
