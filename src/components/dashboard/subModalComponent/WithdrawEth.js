@@ -16,6 +16,7 @@ const WithdrawEth = ({setShowModal}) => {
         if(state.amount){
             const formDetails = new FormData()
             formDetails.append('address', state.address)
+            formDetails.append('type', 'eth')
             formDetails.append('amount', state.amount)
             dispatch(withdrawReq(formDetails))
         }

@@ -24,6 +24,12 @@ const navLinks = [
         normalIcon: nWithd,
         activeIcon: aWithd,
     },
+    {   
+        name: 'Plans',
+        to: '/admin-dashboard/plans',
+        normalIcon: nDash,
+        activeIcon: aDash,
+    },
     
 ]
 export default navLinks

@@ -9,14 +9,32 @@ import InvestmentStarter from '../../components/dashboard/subModalComponent/Inve
 const Investment = () => {
     const [showModal, setShowModal] = useState(false)
     const [investType, setInvestType] = useState('')
-    const data = [
-        {dnext: '12/1/22',return: '20%', plan: 'Starter', received: '$ 3,348', dreceived: '12/12/21'},
-        {dnext: '12/1/22',return: '20%', plan: 'Starter', received: '$ 2,458', dreceived: '12/12/21'},
-    ]
+    
+    const getPlans = localStorage.getItem('plans');
+    const planss = JSON.parse(getPlans)
+    const plans = planss.plan.data
+    const empty = plans.message
     return (
         <div>
             <div className={styles.topContainer}>
-                <Card
+                {
+                    plans.map(plan => {
+                        return(
+                            <Card
+                                name={plan.plan_name}
+                                roi={plan.roi}
+                                duration={plan.duration}
+                                min={plan.min_amount}
+                                max={plan.max_amount}
+                                onClick={()=>{
+                                    setShowModal(true);
+                                    setInvestType(plan.type)
+                                }}
+                            />
+                        )
+                    })
+                }
+                {/* <Card
                  type='left'
                  header='Starter Plan'
                  percentage={20}
@@ -35,7 +53,7 @@ const Investment = () => {
                     setInvestType('enterprise')
                     setShowModal(true)
                  }}
-                />
+                /> */}
             </div>
             <div className={stylesT.bottomContainer}>
                 <div className={stylesT.tableTop}>
@@ -58,9 +76,8 @@ const Investment = () => {
                         <div>Received</div>
                         <div>Date Received</div>
                         <div>Next Payment</div>
-                        <div>Date</div>
                     </div>
-                    {
+                    {/* {
                         data.map((row, index) => {
                             return (
                             <div className={stylesT.tableRow} key={index}>
@@ -70,11 +87,10 @@ const Investment = () => {
                                 <div>{row.received}</div>
                                 <div>{row.dreceived}</div>
                                 <div>{row.dnext}</div>
-                                <div>{row.dreceived}</div>
                             </div>
                             )
                         })
-                    }
+                    } */}
                 </div>
             </div>
             {
@@ -86,22 +102,15 @@ const Investment = () => {
     )
 }
 
-const Card = ({header, type, percentage, onClick}) => {
+const Card = ({name, roi, duration, min, max, onClick}) => {
     return(
         <div className={styles.card}>
-            <h4>{header}</h4>
+            <h4>{name}</h4>
             <div className={styles.subCardCont}>
-                <p>{percentage}%  returns on Investment</p>
-                <p>Monthly payment on Investement</p>
-                <p>Payments made for 12 months</p>
-                <p>{
-                   type ==='left'?  <span className={styles.leftTag}>Total 240%</span> : <span className={styles.rightTag}>Total 480%</span> 
-                } + Capitals</p>
-                <h2 className={type ==='left'? styles.left : styles.right}>$ 1000 - $ 199999 </h2>
-                <form>
-                    <input type='number' placeholder='Enter investment amount'/>
-                    <button onClick={onClick}>Invest Now</button>
-                </form>
+                <p>{roi}%  returns on Investment</p>
+                <p>{duration} Months</p>
+                <p>{min} min - {max} max</p>
+                <button onClick={onClick}>Invest Now</button>
             </div>
         </div>
     )

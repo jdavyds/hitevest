@@ -1,7 +1,7 @@
 import Deposit from "../../pages/adminDashboard/Deposit";
 import Home from "../../pages/adminDashboard/Home";
 import Withdraw from "../../pages/adminDashboard/Withdraw";
-
+import Plans from "../../pages/adminDashboard/Plans";
 
 const dashboardPages = [
     {
@@ -15,6 +15,10 @@ const dashboardPages = [
     {
         path: '/admin-dashboard/withdraw',
         component: Withdraw
+    },
+    {
+        path: '/admin-dashboard/plans',
+        component: Plans
     },
 ]
 

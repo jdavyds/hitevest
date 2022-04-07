@@ -9,14 +9,46 @@ import lock from '../../assets/dashboard/lock.svg'
 import people from '../../assets/dashboard/people.svg'
 import shop from '../../assets/dashboard/shop.svg'
 import Modal from '../../components/Modal'
-import { useSelector } from 'react-redux'
 import ChangePassword from './subModalComponent/ChangePasswordModal'
 import TransferModal from './subModalComponent/TransferModal'
 import SupportTicket from './subModalComponent/SupportTicketModal'
 import TwoFactorSecurity from './subModalComponent/TwoFactorModal'
 import successImage from '../../assets/dashboard/success.svg'
-import style from '../../styles/dashboard/Success.module.css'
+import photo from '../../assets/dashboard/user.png'
+import styleS from '../../styles/dashboard/Success.module.css'
+import logo from '../../assets/dashboard/logo.svg'
+import { useLocation, useNavigate } from 'react-router'
+import { useDispatch, useSelector } from 'react-redux'
+import { logoutReq } from '../../store/asyncActions/userAsyncActions'
+import logout from '../../assets/dashboard/logout.svg'
+import style from '../../styles/dashboard/ResDropdown.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
+
 const Nav = () => {
+    const dispatch = useDispatch()
+    const location = useLocation()
+    const navigate = useNavigate()
+    const {name, referral_link } = useSelector(state => state.user.userDetails)
+    const copyReferral = () => {
+        window.navigator.clipboard.writeText(referral_link)
+        window.alert('link copied')
+    }
+    const logoutUser = () => {
+        window.localStorage.clear()
+        dispatch(logoutReq())
+        navigate('/')
+    }
+    function handleOpen() {
+        setShowRes(true)
+    }
+    function handleClose() {
+        setShowRes(false)
+    }
+    function handleCloseNav() {
+        navigate('/dashboard/profile')
+        setShowRes(false)
+    }
     const [search, setSearch] = useState('')
     const [showDropdown, setShowDropdown] = useState(false)
     const [showModalTrans, setShowModalTrans] = useState(false)
@@ -27,9 +59,9 @@ const Nav = () => {
     const [transferType, setTransferType] = useState('')
     const { userDetails } = useSelector(state => state.user);
     const [showModal, setShowModal] = useState(false)
-
+    const [showRes, setShowRes] = useState(false)
     useEffect(() => {
-        if(userDetails.message === 'Transfer_sent_successfully'){
+        if(userDetails.message === 'Transfer_sent_successfully.'){
             setTransferType('success')
             setShowModal(true)
         }
@@ -46,9 +78,27 @@ const Nav = () => {
             setShowModal(true)
         }
      }, [userDetails])
+     useEffect(() => {
+        if(userDetails.message === 'The given data was invalid.'){
+            setTransferType('changefailed')
+            setShowModal(true)
+        }
+     }, [userDetails])
+     useEffect(() => {
+        if(userDetails.message === 'Password change successfully'){
+            setTransferType('changesuccess')
+            setShowModal(true)
+        }
+     }, [userDetails])
 
     return (
+        <div>
         <div className={styles.navContainer}>
+            <div className={styles.profileImage} onClick={handleOpen}>
+                    <div className={styles.subPic}>
+                        <img src={photo} alt="" />
+                    </div>
+            </div>
             <div className={styles.searchContainer}>
                 <form>
                     <img src={searchIcon} alt="" />
@@ -120,10 +170,39 @@ const Nav = () => {
             {
              showModal && (
                     <Modal setShowModal={setShowModal} Component={
-                        transferType === 'notfound' ? NotFound : transferType === 'success' ? Success : transferType === 'insufficient' ? Insufficient : '' 
+                        transferType === 'notfound' ? NotFound : transferType === 'changefailed' ? ChangeFailed : transferType === 'changesuccess' ? ChangeSuccess : transferType === 'success' ? Success : transferType === 'insufficient' ? Insufficient : '' 
                     }/>
                 )  
                 
+            }
+        </div>
+        {
+                showRes && (
+                    <div className={style.container}>
+                    <div className={style.logo}>
+                    <img src={logo} alt="" />
+                    </div>
+                    <div className={style.profileImage}>
+                    <div className={style.subPic}>
+                        <img src={photo} alt="" />
+                    </div>
+                    </div>
+                    <p className={style.profileName}>{name}</p>
+                    <div className={style.buttonCont}>
+                    {
+                        location.pathname === '/dashboard/profile' ?
+                        <button className={style.activeProfileButton}>View Profile</button>:
+                        <button className={style.inActiveProfileButton} onClick={handleCloseNav}>View Profile</button>
+                    }
+                    <button className={style.referalButton} onClick={copyReferral}>Copy referal link</button>
+                    <button className={style.logout} onClick={logoutUser}>
+                        <img src={logout} alt="" />
+                        <span>Log out</span>
+                    </button>
+                    <button className={style.close} onClick={handleClose}><FontAwesomeIcon icon={ faTimes } id={styles.icons}/></button>
+                </div>
+                </div>
+                )
             }
         </div>
     )
@@ -139,7 +218,7 @@ const DropdownBtn = ({text, image, onClick}) => {
 }
 const Success = ({setShowModal}) => {
     return (
-        <div className={style.container}>
+        <div className={styleS.container}>
            <img src={successImage} alt="" />
            <h3>Withdrawal Successful</h3> 
            <p>Payment was deducted from your deposit wallet</p>
@@ -149,7 +228,7 @@ const Success = ({setShowModal}) => {
 }
 const NotFound = ({setShowModal}) => {
     return (
-        <div className={style.container}>
+        <div className={styleS.container}>
            {/* <img src={successImage} alt="" /> */}
            <h3>Transfer Failed</h3> 
            <p>Receiver not found on this Platform</p>
@@ -159,10 +238,30 @@ const NotFound = ({setShowModal}) => {
 }
 const Insufficient = ({setShowModal}) => {
     return (
-        <div className={style.container}>
+        <div className={styleS.container}>
            {/* <img src={successImage} alt="" /> */}
            <h3>Transfer Failed</h3> 
            <p>Insufficient Wallet Balance</p>
+           <button onClick={() => setShowModal(false)}>Return</button>
+        </div>
+    )
+}
+const ChangeFailed = ({setShowModal}) => {
+    return (
+        <div className={styleS.container}>
+           {/* <img src={successImage} alt="" /> */}
+           <h3>Password Change Failed</h3> 
+           <p>Invalid Credentials</p>
+           <button onClick={() => setShowModal(false)}>Return</button>
+        </div>
+    )
+}
+const ChangeSuccess = ({setShowModal}) => {
+    return (
+        <div className={styleS.container}>
+           {/* <img src={successImage} alt="" /> */}
+           <h3>Successful</h3> 
+           <p>Password Changed Successfully</p>
            <button onClick={() => setShowModal(false)}>Return</button>
         </div>
     )

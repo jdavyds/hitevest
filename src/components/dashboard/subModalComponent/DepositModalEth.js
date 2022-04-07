@@ -35,7 +35,7 @@ const DepositModalEth = ({setShowModal}) => {
                 <h2>Make payment in ETH</h2>
                 <div className={styles.inputContainer}>
                     <label htmlFor="btcaddress"> Enter Etherium wallet address</label>
-                    <input type='text' id="btcaddress" 
+                    <input type='text' id="btcaddress" disabled
                     value={state.address} 
                     onChange={(e) => setState((prevState) => ({...prevState, address: e.target.value}))}
                     />

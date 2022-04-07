@@ -17,6 +17,7 @@ const WithdrawBtcCash = ({setShowModal}) => {
         if(state.amount){
             const formDetails = new FormData()
             formDetails.append('address', state.address)
+            formDetails.append('type', 'btccash')
             formDetails.append('amount', state.amount)
             dispatch(withdrawReq(formDetails))
         }

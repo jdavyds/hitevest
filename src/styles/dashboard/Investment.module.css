@@ -46,7 +46,7 @@
     width: 70%;
     outline: none;
 }
-.card form button {
+.card button {
     width: 150px;
     margin: 10px 0;
     background: #0862A0;
@@ -55,4 +55,14 @@
     border-radius: 10px;
     color: #fff;
     cursor: pointer;
+}
+@media only screen and (max-width: 800px) {
+    .topContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        margin: 5px 0;
+        width: 90%;
+    }
 }

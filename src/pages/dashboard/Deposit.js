@@ -20,13 +20,30 @@ const Deposit = () => {
     const histories = JSON.parse(history)
     const data = histories.depositHistory.data
     const empty = histories.depositHistory.message
+    const getTotal = localStorage.getItem('totals');
+    const totals = JSON.parse(getTotal)
+    const total = totals.referrals.data.data.DepositCount
     useEffect(() => {
-        if(userDetails.message === 'Payment_Request_Submitted_successful'){
+        if(userDetails.message.includes('Submitted')){
             setDepositType('success')
         }
      }, [userDetails, isVerified])
+     useEffect(() => {
+        if(userDetails.message.includes('404' || 'Authorization')){
+            setDepositType('notfound')
+        }
+     }, [userDetails, isVerified])
+     useEffect(() => {
+        if(userDetails.message.includes('422' || 'Expired')){
+            setDepositType('expired')
+        }
+     }, [userDetails, isVerified])
     return (
-        <div>
+        <div className={styles.deposit}>
+            <div className={styles.totalDep}>
+                <h2>Total Deposit</h2>
+                <p>{total}</p>
+            </div>
             <div className={styles.topContainer}>
                 <TransCard
                  image={btcIcon}
@@ -80,7 +97,7 @@ const Deposit = () => {
                         <div>Payment type</div>
                         <div>Amount</div>
                         <div>Status</div>
-                        <div>Time</div>
+                        <div>Date</div>
                     </div>
                     {!empty && !data && ( '' )}
                     { empty === 'You have not made any deposit' && (<div>You have not made any Deposits</div>) }
@@ -103,7 +120,7 @@ const Deposit = () => {
             {
              showModal && (
                     <Modal setShowModal={setShowModal} Component={
-                        depositType === 'btc'? DepositModalBtc : depositType === 'btcc' ? DepositModalBtcCash : depositType === 'success' ? Success : DepositModalEth 
+                        depositType === 'btc'? DepositModalBtc : depositType === 'btcc' ? DepositModalBtcCash : depositType === 'notfound' ? NotFound : depositType === 'expired' ? Expired : depositType === 'success' ? Success : DepositModalEth 
                     }/>
                 )  
                 
@@ -119,6 +136,24 @@ const Success = ({setShowModal}) => {
            <h3>Payment Request Submitted Successful</h3> 
            <p>Payment will be deducted from your deposit wallet</p>
            <button onClick={() => setShowModal(false)}>Continue</button>
+        </div>
+    )
+}
+const NotFound = ({setShowModal}) => {
+    return (
+        <div className={style.container}>
+           <h3>Request Failed</h3> 
+           <p>Authorization Token not found</p>
+           <button onClick={() => setShowModal(false)}>Return</button>
+        </div>
+    )
+}
+const Expired = ({setShowModal}) => {
+    return (
+        <div className={style.container}>
+           <h3>Request Failed</h3> 
+           <p>Token is Expired</p>
+           <button onClick={() => setShowModal(false)}>Return</button>
         </div>
     )
 }

@@ -4,6 +4,7 @@ import {Routes, Route} from 'react-router-dom'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Dashboard from './dashboard/Dashboard'
+import AdminDashboard from './dashboard/adminDashboard'
 import Landing from './pages/Landing'
 import Otp from './pages/Otp'
 import ResetPasswordPage from './pages/ResetPass'
@@ -42,6 +43,7 @@ const App = () => {
 
           </Routes>
           <Dashboard />
+          <AdminDashboard />
       </>
   )
 }

@@ -78,3 +78,23 @@
     background: transparent !important;
     padding: 0 !important;
 }
+@media only screen and (max-width: 800px) {
+    .container {
+        width: 90vw;
+        padding: 20px 30px 10px 30px;
+    }
+    .inputContainer {
+        margin: 10px 0;
+    }
+    .inputContainer input {
+        width: 100%;
+        outline: none;
+        padding: 0 10px;
+    }
+    .customInput {
+        width: 100%;
+    }
+    .container button {
+        padding: 5px 10px;
+    }
+}

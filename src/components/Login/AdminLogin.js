@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from '../../styles/Login.module.css'
 import { useDispatch } from 'react-redux'
-import { loginUser } from '../../store/asyncActions/userAsyncActions'
+import { adminLogin } from '../../store/asyncActions/userAsyncActions'
 
 const AdminLogin = ({setStatus}) => {
     const dispatch = useDispatch();
@@ -12,12 +12,11 @@ const AdminLogin = ({setStatus}) => {
     
     const handleSubmit = (e) => {
         e.preventDefault();
-
         if(state.email && state.password){
             const formDetails = new FormData()
             formDetails.append('email', state.email)
             formDetails.append('password', state.password)
-            dispatch(loginUser(formDetails))
+            dispatch(adminLogin(formDetails))
         }    
     }
     

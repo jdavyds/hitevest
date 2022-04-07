@@ -1,32 +1,18 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styles from '../styles/Login.module.css'
 import landingImg from '../assets/landing.png'
 import AdminLogin from '../components/Login/AdminLogin'
-// import { Navigate } from 'react-router'
-import { useNavigate } from 'react-router'
 import { useSelector } from 'react-redux'
 import Loader from '../components/Loader'
+import { Navigate } from 'react-router'
 
 const AdminLoginPage = () => {
-    const navigate = useNavigate()
     const isLoading = useSelector(state => state.user.loading)
+    const user = useSelector(state => state.user.userDetails)
     
-    useEffect(() => {
-        const fetchId = async () => {
-            const user = await localStorage.getItem('user');
-            const userDetails = await JSON.parse(user)
-            return userDetails
+        if(user) {
+        return <Navigate to='/admin-dashboard' />
         }
-        fetchId().then(res => {
-                if(res.accountId === 2){
-                return navigate('/admin-dashboard')
-            } else if(res.accountId !== 2) {
-                return navigate('/login')
-            }
-        }
-        )
-        fetchId();
-    }, [isLoading, navigate])
     return (
         <div className={styles.mainContainer}>
             {isLoading && <Loader />}

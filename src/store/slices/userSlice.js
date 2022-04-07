@@ -14,6 +14,22 @@ const userSlice = createSlice({
             state.userDetails = action.payload
             state.loading = false
         },
+        updateUse: (state, action) => {
+            state.userInfo = action.payload
+            state.loading = false
+        },
+        updateBal: (state, action) => {
+            state.userBal = action.payload
+            state.loading = false
+        },
+        updateRef: (state, action) => {
+            state.userRef = action.payload
+            state.loading = false
+        },
+        clearUse: (state) =>  {
+            state.isVerified = false;
+            state.userInfo = false
+        },
         clearUser: (state) => {
             state.isVerified = false;
             state.user = null
@@ -41,6 +57,6 @@ const userSlice = createSlice({
 
 
 
-export const {updateUser, clearUser, updateMessage, isError, isLoading, verified, logout} = userSlice.actions
+export const {updateUser, updateUse, updateBal, clearUse, updateRef, clearUser, updateMessage, isError, isLoading, verified, logout} = userSlice.actions
 
 export default userSlice.reducer

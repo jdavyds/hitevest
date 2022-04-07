@@ -10,8 +10,8 @@ import nTrans from '../../assets/dashboard/nTrans.svg'
 import aTrans from '../../assets/dashboard/aTrans.svg'
 import nRefer from '../../assets/dashboard/nRefer.svg'
 import aRefer from '../../assets/dashboard/aRefer.svg'
-
-const navLinks = [
+   
+   const navLinks = [
     {
         name: 'Dashboard',
         to: '/dashboard',
@@ -43,7 +43,7 @@ const navLinks = [
         activeIcon: aTrans,
     },
     {   
-        name: 'Referals',
+        name: `Referals`,
         to: '/dashboard/referals',
         normalIcon: nRefer,
         activeIcon: aRefer,

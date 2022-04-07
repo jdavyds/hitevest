@@ -7,8 +7,8 @@ import chart3 from '../../assets/dashboard/3cha.svg'
 import chart4 from '../../assets/dashboard/4cha.svg'
 import chart5 from '../../assets/dashboard/5cha.svg'
 import chart6 from '../../assets/dashboard/6cha.svg'
-import longArr from '../../assets/dashboard/long-arrow.svg'
-import { useNavigate } from 'react-router'
+// import longArr from '../../assets/dashboard/long-arrow.svg'
+// import { useNavigate } from 'react-router'
 import calendar from '../../assets/dashboard/calendar.svg'
 
 const data = [
@@ -49,7 +49,7 @@ const data = [
     }
 ]
 const Home = () => {
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     return (
         <div>
             <div className={styles.cardContainer}>
@@ -142,9 +142,9 @@ const Home = () => {
                         })
                     }
                 </div>
-                <div className={styles.viewAll}>
+                {/* <div className={styles.viewAll}>
                     <button onClick={()=> navigate('/dashboard/transactions')}>View All <img src={longArr} alt="" /></button>
-                </div>
+                </div> */}
             </div>
         </div>
     )

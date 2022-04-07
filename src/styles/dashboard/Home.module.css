@@ -2,12 +2,14 @@
     display: flex;
     margin-top: 25px;
     justify-content: space-between;
+    overflow-x: scroll;
 }
 .homeCardCont {
     background: #fff;
     border-radius: 10px;
     padding-top: 10px;
     width: 150px;
+    margin: 0 5px;
 }
 .homeCardHeader {
     font-size: 14px;
@@ -104,38 +106,24 @@
 .tableCont {
     padding-top: 30px;
     color: #8C8888;
-    overflow-x: scroll;
 }
 .tableHeader {
-    display: flex;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50px 1fr 1fr 1fr 1fr 1fr;
     font-weight: 600;
     font-size: 14px;
 }
 .tableRow {
-    display: flex;
+    width: 100%;
     font-size: 14px;
+    display: grid;
+    grid-template-columns: 50px 1fr 1fr 1fr 1fr 1fr;
     padding: 7px 0;
 }
-.tableHeader div:nth-child(1),.tableRow div:nth-child(1) {
-    min-width: 50px;
-    text-align: center;
+.tableHeader div, .tableRow div {
+    text-align: start;
 }
-.tableHeader div:nth-child(2), .tableRow div:nth-child(2) {
-    min-width: 120px;
-}
-.tableHeader div:nth-child(3), .tableRow div:nth-child(3) {
-    min-width: 180px;
-}
-.tableHeader div:nth-child(4), .tableRow div:nth-child(4) {
-    min-width: 150px;
-}
-.tableHeader div:nth-child(5), .tableRow div:nth-child(5) {
-    min-width: 150px;
-}
-.tableHeader div:nth-child(6), .tableRow div:nth-child(6) {
-    width: 100%;
-}
-
 .viewAll {
     display: flex;
     justify-content: right;
@@ -151,4 +139,57 @@
 }
 .viewAll button img {
     padding-left: 4px;
+}
+@media only screen and (max-width: 800px) {
+    .cardContainer {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        justify-content: space-evenly;
+    }
+    .homeCardCont {
+        margin: 5px 0;
+        width: 45%;
+    }
+    .bottomContainer {
+        border-radius: 10px;
+        padding: 10px 5px;
+        margin-top: 10px;
+    }
+    /* .tableDate {
+        display: none;
+    } */
+    .tableTop {
+        display: flex;
+        flex-direction: column;
+    }
+    .tableCont {
+        overflow-x: scroll;
+    }
+    .tableTab {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin: 10px 0;
+    }
+    .tableTab button {
+        padding: 5px 10px;
+        border-radius: 10px;
+    }
+    .tableHeader {
+        font-weight: 600;
+        font-size: 12px;
+        grid-template-columns: 25px 1fr 1fr 1fr 1fr 1fr;
+    }
+    .tableRow {
+        grid-template-columns: 25px 1fr 1fr 1fr 1fr 1fr;
+        font-size: 12px;
+        padding: 7px 0;
+    }
+    .tableHeader div, .tableRow div {
+        min-width: 100px;
+    }
+    .tableHeader div:first-of-type, .tableRow div:first-of-type {
+        min-width: 25px;
+        width: 25px;
+    }
 }

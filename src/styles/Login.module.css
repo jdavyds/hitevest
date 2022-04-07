@@ -13,6 +13,9 @@
     box-shadow: 0 0 20px #eee;
     position: relative;
 }
+.subContainer form {
+    width: 100%;
+}
 .leftCont {
     display: flex;
     justify-content: center;
@@ -136,4 +139,36 @@
 }
 .customInput button img{
     height: 60%;
+}
+.logo {
+    display: none;
+}
+@media only screen and (max-width: 800px) {
+    .contImage {
+        display: none;
+    }
+    .logo {
+        display: flex;
+        margin: 30px auto 50px auto;
+    }
+    .mainContainer {
+        min-height: 100vh;
+        height: fit-content;
+        overflow-y: scroll;
+        align-items: center;
+        justify-content: center;
+    }
+    .subContainer {
+        height: fit-content;
+    }
+    .subContainer form {
+        width: inherit;
+        margin: 0 auto;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .subContainer {
+        display: flex;
+        width: 90%;
+    }
 }

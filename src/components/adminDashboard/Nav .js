@@ -3,7 +3,7 @@ import styles from '../../styles/dashboard/Nav.module.css'
 import searchIcon from '../../assets/dashboard/search.svg'
 import notification from '../../assets/dashboard/notification.svg'
 import setting from '../../assets/dashboard/setting.svg'
-const Nav = () => {
+const AdminNav = () => {
     const [search, setSearch] = useState('')
     
     return (
@@ -23,4 +23,4 @@ const Nav = () => {
         </div>
     )
 }
-export default Nav
+export default AdminNav

@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import styles from '../../styles/Login.module.css'
-import OtpInput from 'react-otp-input'
 import { useDispatch, useSelector } from 'react-redux'
 import { resetPassword } from '../../store/asyncActions/userAsyncActions'
 import eye from '../../assets/eye.svg'
 import Loader from '../Loader'
+import logo from '../../assets/dashboard/logo.svg'
+
 
 const ResetPass = ({setStatus}) => {
     const dispatch = useDispatch()
@@ -13,13 +14,15 @@ const ResetPass = ({setStatus}) => {
     const [showP2, setShowP2] = useState(false)
     const [password, setPassword] = useState('')
     const [rePassword, setRePassword] = useState('')
-    const [email, setEmail] = useState('')
+    const mail = sessionStorage.getItem('verifyEmail');
+    const email = JSON.parse(mail)
     const handleSubmit = (e) => {
         e.preventDefault()
         const formObj = new FormData()
         if(email && (password === rePassword)) {
             formObj.append('email', email)
             formObj.append('password', password)
+            formObj.append('password_confirmation', rePassword)
             dispatch(resetPassword(formObj))
         }
     }
@@ -27,13 +30,15 @@ const ResetPass = ({setStatus}) => {
         <div className={styles.leftCont}>
             {isLoading && <Loader />}
             <form onSubmit={handleSubmit} className={styles.resetForm}>
+            <div className={styles.logo}>
+                <img src={logo} alt="" />
+            </div>
             <h2>Reset your password</h2>
                 <div className={styles.otpInputCont}>
                     <label htmlFor="pass1">Enter Email</label>
                     <div className={styles.customInput}>
                         <input type='email' id="email" name="email" 
-                        value={email} 
-                        onChange={(e) => setEmail(e.target.value)} required/>
+                        value={email} disabled/>
                     </div>
                     <label htmlFor="pass1">Enter new password</label>
                     <div className={styles.customInput}>

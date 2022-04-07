@@ -127,3 +127,83 @@
     padding: 10px 40px;
     font-size: 1.1em;
 }
+@media only screen and (max-width: 800px) {
+    .container {
+        width: 90vw;
+        border-radius: 20px;
+        height: 100%;
+        overflow-y: scroll;
+        padding: 20px 10px 10px 10px;
+    }
+    .container main {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px;
+    }
+    .factorAuth {
+        max-width: 100%;
+        width: 100%;
+        height: fit-content;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+        text-align: justify;
+    }
+    .copyUrl {
+        display: flex;
+        width: 100%;
+        margin: 10px 0;
+        border-radius: 30px;
+        background: #e7f0f7;
+    }
+    .copyUrl input {
+        height: 35px;
+        width: 100%;
+        border-radius: 10px;
+    }
+    .copyUrl button {
+        display: none;
+        padding: 0;
+        width: 0;
+    }
+    .qrCode {
+        margin: 10px 0;
+    }
+    .otp {
+        display: flex;
+        flex-direction: column;
+    }
+    .otp label {
+        font-size: 13px;
+        padding: 5px 0;
+        color: #2B2828;
+    }
+    .otp input {
+        width: 100%;
+        border-radius: 10px;
+        padding: 5px 0px;
+        margin: 5px 0;
+    }
+    .factorBtn button {
+    min-width: 70%;
+    width: 80%;
+    padding: 10px 5px;
+    font-size: 15px;
+    }
+    .googleAuth {
+        width: 100%;
+        margin-top: 20px;
+        height: fit-content;
+        align-items: center;
+        text-align: justify;
+    }
+    .content {
+        padding: 10px;
+    }
+    .googleAuth p {
+        margin: 10px 0;
+        line-height: 1.4;
+        font-size: 16px;
+    }
+}

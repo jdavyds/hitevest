@@ -20,19 +20,30 @@ const Withdraw = () => {
     const histories = JSON.parse(history)
     const data = histories.depositHistory.data
     const empty = histories.depositHistory.message
+    const getTotal = localStorage.getItem('totals');
+    const totals = JSON.parse(getTotal)
+    const total = totals.referrals.data.data.WithdrawalCount
     useEffect(() => {
-        if(userDetails.message === 'Withdrawal_Request_Submitted_Successful'){
+        if(userDetails.message.includes('Submitted')){
             setWithdrawType('success')
         }
      }, [userDetails, isVerified])
      useEffect(() => {
-        if(userDetails.message === 'Request failed with status code 419'){
+        if(userDetails.message.includes('419' || 'Low')){
             setWithdrawType('failed')
         }
      }, [userDetails, isVerified])
-
+     useEffect(() => {
+        if(userDetails.message.includes('422' || 'Not proccessed')){
+            setWithdrawType('notprocessed')
+        }
+     }, [userDetails, isVerified])
     return (
         <div>
+            <div className={styles.totalWith}>
+                <h2>Total Withdrawal</h2>
+                <p>{total}</p>
+            </div>
             <div className={styles.topContainer}>
                 <TransCard
                  image={btcIcon}
@@ -116,7 +127,7 @@ const Withdraw = () => {
             {
              showModal && (
                     <Modal setShowModal={setShowModal} Component={
-                        withdrawType === 'btc'? WithdrawBtc : withdrawType === 'btcc' ? WithdrawBtcCash : withdrawType === 'success' ? Success : withdrawType === 'failed' ? Failed : WithdrawEth 
+                        withdrawType === 'btc'? WithdrawBtc : withdrawType === 'btcc' ? WithdrawBtcCash : withdrawType === 'success' ? Success : withdrawType === 'notprocessed' ? NotProc : withdrawType === 'failed' ? Failed : WithdrawEth 
                     }/>
                 )  
                 
@@ -147,6 +158,19 @@ const Failed = ({setShowModal}) => {
            {/* <img src={successImage} alt="" /> */}
            <h3>Withdrawal Failed</h3> 
            <p>Withdrawer Request Failed! Wallet Balance Low</p>
+           <button onClick={handleReturn}>Return</button>
+        </div>
+    )
+}
+const NotProc = ({setShowModal}) => {
+    function handleReturn() {
+        setShowModal(false)
+    }
+    return (
+        <div className={style.container}>
+           {/* <img src={successImage} alt="" /> */}
+           <h3>Withdrawal Failed! Error</h3> 
+           <p>Not proccessed</p>
            <button onClick={handleReturn}>Return</button>
         </div>
     )

@@ -1,7 +1,7 @@
 import React from 'react'
 import DashboardWrapper from './wrapper/AdminDashboardWrapper'
 
-const Dashboard = () => {
+const AdminDashboard = () => {
     return (
         <>
           <DashboardWrapper />  
@@ -9,4 +9,4 @@ const Dashboard = () => {
     )
 }
 
-export default Dashboard
+export default AdminDashboard

@@ -23,8 +23,10 @@ const Transactions = () => {
                 <div className={styles.tableTop}>
                     <div className={styles.tableTab}>
                         <h2>Transactions</h2>
+                        <div>
                         <button className={styles.active}>Deposit</button>
                         <button className={styles.inActive}>Interest</button>
+                        </div>
                     </div> 
                     <div className={styles.tableDate}>
                         <button className={styles.active}><img src={calendar} alt="" /></button> 

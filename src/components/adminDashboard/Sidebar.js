@@ -5,7 +5,7 @@ import navLinks from '../../dashboard/adminUtils/navLinks'
 import logo from '../../assets/dashboard/logo.svg'
 import logout from '../../assets/dashboard/logout.svg'
 import photo from '../../assets/dashboard/photo.png'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { logoutReq } from '../../store/asyncActions/userAsyncActions'
 
 
@@ -13,11 +13,7 @@ const Sidebar = () => {
     const dispatch = useDispatch()
     const location = useLocation()
     const navigate = useNavigate()
-    const {name } = useSelector(state => state.user.userDetails)
-    // const copyReferral = () => {
-    //     window.navigator.clipboard.writeText(referral_link)
-    //     window.alert('link copied')
-    // }
+    
     const logoutUser = () => {
         window.localStorage.clear()
         dispatch(logoutReq())
@@ -61,7 +57,7 @@ const Sidebar = () => {
                         <img src={photo} alt="" />
                     </div>
                 </div>
-                <p className={styles.profileName}>{name}</p>
+                <p className={styles.profileName}>Admin</p>
                 <div className={styles.buttonCont}>
                     <button className={styles.logout} onClick={logoutUser}>
                         <img src={logout} alt="" />

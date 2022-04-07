@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router';
-import Nav from '../../components/adminDashboard/Nav';
+// import Nav from '../../components/adminDashboard/Nav';
+import AdminNav from '../../components/adminDashboard/Nav ';
 import Sidebar from '../../components/adminDashboard/Sidebar';
 import dashboardPages from '../adminUtils/dashboardPages';
 import styles from '../../styles/dashboard/Dashboard.module.css'
@@ -24,7 +25,7 @@ const DashboardWrapper = () => {
                                <Sidebar /> 
                             </div>
                             <div className={styles.rightContainer}>
-                                <Nav />
+                                <AdminNav />
                                 <value.component />
                             </div>
                         </section>

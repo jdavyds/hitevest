@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from '../../styles/dashboard/Home.module.css'
 import HomeCard from '../../components/dashboard/HomeCard'
 import chart1 from '../../assets/dashboard/1cha.svg'
@@ -11,51 +11,32 @@ import longArr from '../../assets/dashboard/long-arrow.svg'
 import { useNavigate } from 'react-router'
 import calendar from '../../assets/dashboard/calendar.svg'
 
-const data = [
-    {
-        date: '1/3/2022',
-        transactionId: 'sdf123fsdfr234',
-        amount: '$5,094',
-        balance: '$234,535',
-        details: 'This was deposited into your wallet'
-    },
-    {
-        date: '1/3/2022',
-        transactionId: 'sdf123fsdfr234',
-        amount: '$5,094',
-        balance: '$234,535',
-        details: 'This was deposited into your wallet'
-    },
-    {
-        date: '1/3/2022',
-        transactionId: 'sdf123fsdfr234',
-        amount: '$5,094',
-        balance: '$234,535',
-        details: 'This was deposited into your wallet'
-    },
-    {
-        date: '1/3/2022',
-        transactionId: 'sdf123fsdfr234',
-        amount: '$5,094',
-        balance: '$234,535',
-        details: 'This was deposited into your wallet'
-    },
-    {
-        date: '1/3/2022',
-        transactionId: 'sdf123fsdfr234',
-        amount: '$5,094',
-        balance: '$234,535',
-        details: 'This was deposited into your wallet'
-    }
-]
+
 const Home = () => {
     const navigate = useNavigate()
+    
+    // const history = localStorage.getItem('depHistory');
+    // const histories = JSON.parse(history)
+    // const data = histories.depositHistory.data
+    // const empty = histories.depositHistory.message
+    // useEffect(() => {
+    //     const fetchStatus = async () => {
+    //         const stat = await localStorage.getItem('confirmDeposit');
+    //         const status = await JSON.parse(stat)
+    //         if(status){
+    //         }
+    //     }
+    //     fetchStatus();
+    // })
+    // const balanceFetch = localStorage.getItem('depHistory');
+    // const walletBalance = JSON.parse(history)
+    // const balance = walletBalance
     return (
         <div>
             <div className={styles.cardContainer}>
                 <HomeCard 
                     name='Deposit Wallet' 
-                    total='600'
+                    total='0.00'
                     percent={2.5} 
                     color='#F2A218'
                     image={chart1}
@@ -63,7 +44,7 @@ const Home = () => {
                  />
                  <HomeCard 
                     name='Interest Wallet' 
-                    total='600'
+                    total='0.00'
                     percent={2.5} 
                     color='#5893F3'
                     image={chart2}
@@ -71,7 +52,7 @@ const Home = () => {
                  />
                  <HomeCard 
                     name='Total Investment' 
-                    total='600'
+                    total='0.00'
                     percent={2.5} 
                     color='#EB5757'
                     image={chart3}
@@ -79,7 +60,7 @@ const Home = () => {
                  />
                  <HomeCard 
                     name='Total Deposit' 
-                    total='600'
+                    total='0.00'
                     percent={2.5} 
                     color='#56CCF2'
                     image={chart4}
@@ -87,7 +68,7 @@ const Home = () => {
                  />
                  <HomeCard 
                     name='Total Withdrawal' 
-                    total='600'
+                    total='0.00'
                     percent={2.5} 
                     color='#9B51E0'
                     image={chart5}
@@ -95,7 +76,7 @@ const Home = () => {
                  />
                  <HomeCard 
                     name='Total Referal' 
-                    total='600'
+                    total='0.00'
                     percent={2.5} 
                     color='#0862A0'
                     image={chart6}
@@ -121,26 +102,28 @@ const Home = () => {
                 <div className={styles.tableCont}>
                     <div className={styles.tableHeader}>
                         <div>S/N</div>
-                        <div>Date</div>
                         <div>Transaction ID</div>
+                        <div>Type</div>
                         <div>Amount</div>
-                        <div>Wallet balance</div>
-                        <div>Details</div>
+                        <div>Status</div>
+                        <div>Date</div>
                     </div>
-                    {
+                    {/* {!empty && !data && ( '' )}
+                    { empty === 'You have not made any deposit' && (<div>You have not made any Deposits</div>) }
+                    { data && (
                         data.map((row, index) => {
                             return (
-                            <div className={styles.tableRow}>
+                            <div className={styles.tableRow} key={index}>
                                 <div>{index + 1}</div>
-                                <div>{row.date}</div>
-                                <div>{row.transactionId}</div>
+                                <div>{(row.id).slice(0, 5)}</div>
+                                <div>{row.type}</div>
                                 <div>{row.amount}</div>
-                                <div>{row.balance}</div>
-                                <div>{row.details}</div>
+                                <div>{row.status}</div>
+                                <div>{(row.created_at).slice(0, 10)}</div>
                             </div>
                             )
-                        })
-                    }
+                        }))
+                    } */}
                 </div>
                 <div className={styles.viewAll}>
                     <button onClick={()=> navigate('/dashboard/transactions')}>View All <img src={longArr} alt="" /></button>

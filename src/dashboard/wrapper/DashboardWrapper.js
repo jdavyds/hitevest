@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router';
 import Nav from '../../components/dashboard/Nav';
 import Sidebar from '../../components/dashboard/Sidebar';
+import ResSidebar from '../../components/dashboard/ResSidebar'
 import dashboardPages from '../utils/dashboardPages';
 import styles from '../../styles/dashboard/Dashboard.module.css'
 import { useSelector } from 'react-redux'
@@ -26,6 +27,9 @@ const DashboardWrapper = () => {
                             <div className={styles.rightContainer}>
                                 <Nav />
                                 <value.component />
+                            </div>
+                            <div className={styles.resContainer}>
+                               <ResSidebar /> 
                             </div>
                         </section>
                     }

@@ -12,7 +12,6 @@ const Nav = () => {
                     <router-link to="/" className="nav-link">
                         <img src={logo} className={ styles.brandLogo } alt="" />
                     </router-link>
-
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

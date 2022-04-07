@@ -36,7 +36,7 @@ const DepositModalBtc = ({setShowModal}) => {
                 <h2>Make payment in Bitcoin</h2>
                 <div className={styles.inputContainer}>
                     <label htmlFor="btcaddress"> Enter bitcoin wallet address</label>
-                    <input type='text' id="btcaddress" 
+                    <input type='text' id="btcaddress"  disabled
                     value={state.address} 
                     onChange={(e) => setState((prevState) => ({...prevState, address: e.target.value}))}
                     />

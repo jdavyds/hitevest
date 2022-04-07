@@ -1,41 +1,64 @@
-import React, { useState} from 'react'
-import photo from '../../assets/dashboard/photo.png'
+import React, { useState, useEffect } from 'react'
+import photo from '../../assets/dashboard/user.png'
 import styles from '../../styles/dashboard/Profile.module.css'
-import { useSelector } from 'react-redux'
+import Modal from '../../components/Modal'
+import successImage from '../../assets/dashboard/success.svg'
+import style from '../../styles/dashboard/Success.module.css'
+import Loader from './../../components/Loader'
+import { useSelector, useDispatch } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faUser , faAddressCard} from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faUser } from '@fortawesome/free-solid-svg-icons'
+import { updateProfile } from '../../store/asyncActions/userAsyncActions'
 const Profile = () => {
-    // const { userDetails } = useSelector(state => state.user);
-    const { name } = useSelector(state => state.user.userDetails)
-
-
-    // const names = userDetails.name.split(' ')
-    const [ edit1, setEdit1 ] = useState(false)
-    const [ edit2, setEdit2 ] = useState(false)
+    const dispatch = useDispatch()
+    const [showModal, setShowModal] = useState(false)
+    const [modal, setModal] = useState('')
+    const { userDetails, isVerified } = useSelector(state => state.user);
+    const isLoading = useSelector(state => state.user.loading)
     const [ editInput1, setEditInput1 ] = useState(false)
-    const [ editInput2, setEditInput2 ] = useState(false)
+    const [form, setForm] = useState({
+        fullName: userDetails.name,
+        email: userDetails.email,
+        phone: userDetails.phone,
+        username: '',
+        address: ''
+    })
     function handleEdit1() {
-        const inputs = document.querySelectorAll('.edit1')
-        if(edit1 === true) {
-            inputs.disabled = true;
-        } else{
-            inputs.disabled = false;
-        }
         setEditInput1(!editInput1)
-        setEdit1(!edit1)
     }
-    function handleEdit2() {
-        const inputs = document.querySelectorAll('.edit2')
-        if(edit2 === true) {
-            inputs.disabled = true;
-        } else{
-            inputs.disabled = false;
+    // function handleEdit2() {
+    //     const inputs = document.querySelectorAll('.edit2')
+    //     if(edit2 === true) {
+    //         inputs.disabled = true;
+    //     } else{
+    //         inputs.disabled = false;
+    //     }
+    //     setEditInput2(!editInput2)
+    //     setEdit2(!edit2)
+    // }
+    function handleSave(e) {
+        e.preventDefault();
+        if(form.fullName && form.address && form.phone){
+            const formDetails = new FormData()
+            formDetails.append('name', form.name)
+            formDetails.append('address', form.address)
+            formDetails.append('phone', form.phone)
+            dispatch(updateProfile(formDetails))
+        } 
+    }
+    useEffect(() => {
+        if(userDetails.message.includes('Updated')){
+            setModal('success')
         }
-        setEditInput2(!editInput2)
-        setEdit2(!edit2)
-    }
+     }, [userDetails, isVerified])
+     useEffect(() => {
+        if(userDetails.message === 'Request failed with status code 404'){
+            setModal('failed')
+        }
+     }, [userDetails, isVerified])
     return (
         <div className={styles.profilePage}>
+            {isLoading && <Loader />}
             <div className={styles.topCorner}>
                 <div className={styles.profilePic}>
                 <img src={photo} alt="" />
@@ -46,66 +69,104 @@ const Profile = () => {
                 <div className={styles.leftCard}>
                     <p><FontAwesomeIcon icon={ faUser } className={styles.bottomIcon}/>
                         Personal Details <button onClick={handleEdit1}>Edit</button></p>
-                    <form>
-                        <label htmlFor="first name">
-                            First Name
-                            <input className={editInput1 ? styles.edit1 : ''} type="text" name="first name" disabled/>
+                    <form id='profile1' onSubmit={handleSave}>
+                        <label htmlFor="full name">
+                            Full Name
+                            <input className={editInput1 ? styles.edit1 : ''} type="text" name="full name"
+                            value={form.fullName}
+                            onChange={(e) => setForm((prevState) => ({...prevState, fullName: e.target.value}))} />
                         </label>
-                        <label htmlFor="last name">
+                        {/* <label htmlFor="last name">
                             Last Name
-                            <input className={editInput1 ? styles.edit1 : ''} type="text" name="last name" disabled/>
-                        </label>
+                            <input className={editInput1 ? styles.edit1 : ''} type="text" name="last name"
+                            value={form.lastName}
+                            onChange={(e) => setForm((prevState) => ({...prevState, lastName: e.target.value}))} />
+                        </label> */}
                         <label htmlFor="username">
                             Username
-                            <input className={editInput1 ? styles.edit1 : ''} type="text" name="username" disabled/>
+                            <input className={editInput1 ? styles.edit1 : ''} type="text" name="username" 
+                            onChange={(e) => setForm((prevState) => ({...prevState, username: e.target.value}))}/>
                         </label>
                         <label htmlFor="mail">
                             Email address
-                            <input className={editInput1 ? styles.edit1 : ''} type="email" name="mail" disabled/>
+                            <input className={editInput1 ? styles.edit1 : ''} type="email" name="mail"
+                            value={form.email} disabled/>
                         </label>
                         <label htmlFor="mobile">
                             Mobile number
-                            <input className={editInput1 ? styles.edit1 : ''} type="tel" name="mobile" disabled/>
+                            <input className={editInput1 ? styles.edit1 : ''} type="tel" name="mobile"
+                            value={form.phone} 
+                            onChange={(e) => setForm((prevState) => ({...prevState, phone: e.target.value}))}/>
                         </label>
-                    </form>
-                    <div className={styles.leftBtn}>
-                        <button className={edit1 ? styles.active : ''} onClick={handleEdit1}>Cancel</button>
-                        <button className={edit1 ? styles.active : ''}>Save</button>
-                    </div>
-                </div>
-                <div className={styles.rightCard}>
-                    <p>
-                    <FontAwesomeIcon icon={ faAddressCard } className={styles.bottomIcon}/>Address Details <button onClick={handleEdit2}>Edit</button></p>
-                    <form>
                         <label htmlFor="adress">
                             Address
-                            <input type="text" name="address" className={editInput2 ? styles.edit2 : ''} disabled/>
-                        </label>
-                        <label htmlFor="country">
-                            Country
-                            <input type="text" name="country" className={editInput2 ? styles.edit2 : ''} disabled/>
-                        </label>
-                        <label htmlFor="state">
-                            State
-                            <input type="text" name="state" className={editInput2 ? styles.edit2 : ''} disabled/>
-                        </label>
-                        <label htmlFor="city">
-                            City
-                            <input type="email" name="city" className={editInput2 ? styles.edit2 : ''} disabled/>
-                        </label>
-                        <label htmlFor="zip">
-                            Zip
-                            <input type="number" name="zip" className={editInput2 ? styles.edit2 : ''} disabled/>
+                            <input type="text" name="address" className={editInput1 ? styles.edit1 : ''} 
+                            onChange={(e) => setForm((prevState) => ({...prevState, address: e.target.value}))}/>
                         </label>
                     </form>
                     <div className={styles.rightBtn}>
-                        <button className={edit2 ? styles.active : ''} onClick={handleEdit2}>Cancel</button>
-                        <button className={edit2 ? styles.active : ''}>Save</button>
+                        <button className={editInput1 ? styles.active : ''} onClick={handleEdit1}>Cancel</button>
+                        <button className={editInput1 ? styles.active : ''} type='submit' onClick={handleSave}>Save</button>
                     </div>
                 </div>
+                {/* <div className={styles.rightCard}>
+                    <p>
+                    <FontAwesomeIcon icon={ faAddressCard } className={styles.bottomIcon}/>Address Details </p>
+                    <form>
+                        <label htmlFor="adress">
+                            Address
+                            <input type="text" name="address" className={editInput1 ? styles.edit2 : ''} 
+                            onChange={(e) => setForm((prevState) => ({...prevState, address: e.target.value}))}/>
+                        </label>
+                        <label htmlFor="country">
+                            Country
+                            <input type="text" name="country" className={editInput1 ? styles.edit2 : ''} disabled/>
+                        </label>
+                        <label htmlFor="state">
+                            State
+                            <input type="text" name="state" className={editInput1 ? styles.edit2 : ''} disabled/>
+                        </label>
+                        <label htmlFor="city">
+                            City
+                            <input type="email" name="city" className={editInput1 ? styles.edit2 : ''} disabled/>
+                        </label>
+                        <label htmlFor="zip">
+                            Zip
+                            <input type="number" name="zip" className={editInput1 ? styles.edit2 : ''} disabled/>
+                        </label>
+                    </form>
+                    <div className={styles.rightBtn}>
+                        <button className={editInput1 ? styles.active : ''} onClick={handleEdit1}>Cancel</button>
+                        <button className={editInput1 ? styles.active : ''}>Save</button>
+                    </div>
+                </div> */}
             </div>
+            {
+             showModal && (
+                    <Modal setShowModal={setShowModal} Component={
+                        modal === 'Success' ? Success : modal === 'failed' ? Failed : '' 
+                    }/>
+                )  
+                
+            }
         </div>
     )
 }
-
+const Success = ({setShowModal}) => {
+    return (
+        <div className={style.container}>
+           <img src={successImage} alt="" />
+           <h3>Profile Updated Successfully</h3> 
+           <button onClick={() => setShowModal(false)}>Continue</button>
+        </div>
+    )
+}
+const Failed = ({setShowModal}) => {
+    return (
+        <div className={style.container}>
+           <h3>Request Failed</h3> 
+           <button onClick={() => setShowModal(false)}>Return</button>
+        </div>
+    )
+}
 export default Profile

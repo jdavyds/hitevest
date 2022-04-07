@@ -3,6 +3,7 @@ import styles from '../../styles/Login.module.css'
 import { useDispatch } from 'react-redux'
 import { loginUser } from '../../store/asyncActions/userAsyncActions'
 import { Link, useNavigate } from 'react-router-dom'
+import logo from '../../assets/dashboard/logo.svg'
 
 const Login = ({setStatus}) => {
     const dispatch = useDispatch();
@@ -14,7 +15,6 @@ const Login = ({setStatus}) => {
     
     const handleSubmit = (e) => {
         e.preventDefault();
-
         if(state.email && state.password){
             const formDetails = new FormData()
             formDetails.append('email', state.email)
@@ -26,6 +26,9 @@ const Login = ({setStatus}) => {
     return (
         <div className={styles.leftCont} >
             <form className={styles.loginForm} onSubmit={handleSubmit}>
+                <div className={styles.logo}>
+                    <img src={logo} alt="" />
+                </div>
                 <h2>Login to your account</h2>
                 <div className={styles.loginInputCont}>
                     <label htmlFor="email">Email Address</label>

@@ -109,3 +109,67 @@
 .dropdown button img {
     padding-right: 5px;
 }
+.profileImage {
+    display: none;
+}
+
+/* RESPONSIVENESS */
+@media only screen and (max-width: 800px) {
+.profileImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin: 0 auto;
+    padding: 2px;
+    object-fit: cover;
+}
+.subPic{
+    border-radius: 50%;
+    overflow: hidden;
+    height: 45px;
+    width: 45px;
+}
+.subPic img {
+    height: 100%;
+    width: 100%;
+}
+.controlsContainer {
+    width: fit-content;
+    padding: 0;
+}
+.controlsContainer button:first-of-type {
+    display: none;
+}
+.controlsContainer button{
+    padding: 5px;
+    height: 40px; 
+    width: 40px;
+}
+.searchContainer form button {
+    display: none;
+}
+.searchContainer{
+    min-width: 200px;
+    width: 100%;
+    margin: 5px;
+    height: 40px;
+    position: relative;
+}
+.searchContainer img {
+    height: 20px;
+}
+.searchContainer form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 3px;
+}
+.searchContainer form input {
+    font-size: 13px;
+    padding: 0 10px;
+}
+}

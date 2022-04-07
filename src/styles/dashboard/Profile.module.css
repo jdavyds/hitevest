@@ -15,8 +15,7 @@
 }
 .profilePic {
     border-radius: 50%;
-    background: linear-gradient(217.27deg, #0862A0 13.62%, #EB5757 91.44%);
-    height: 100px;
+    height: 80px;
     width: 100px;
     margin: 0 auto;
     padding: 4px;
@@ -115,4 +114,70 @@
 .leftBtn button:nth-of-type(2), .rightBtn button:nth-of-type(2) {
     background: rgba(8, 98, 160, 1);
     color: white;
+}
+@media only screen and (max-width: 800px) {
+    .bottomCorner {
+        width: 100%;
+        margin: 50px 0;
+        flex-direction: column;
+    }
+    .bottomCorner p {
+        font-size: 21px;
+        margin-bottom: 20px;
+    }
+    .bottomIcon {
+        margin-right: 10px;
+    }
+    .bottomCorner button {
+        margin: 0 10px;
+        font-size: 18px;
+    }
+    .leftCard, .rightCard {
+        width: 100%;
+        margin: 0 0;
+        padding: 20px 10px;
+        border: none;
+    }
+    .leftCard form, .rightCard form {
+        display: flex;
+        flex-direction: column;
+    }
+    .leftCard label, .rightCard label {
+        width: 100%;
+        margin: 5px 0;
+        color: rgb(180, 177, 177, 0.7);
+        display: flex;
+        flex-direction: column;
+    }
+    .leftCard input, .rightCard input {
+        color: white;
+        background: rgb(240, 238, 238);
+    }
+    .leftCard input.edit1, .rightCard input.edit2 {
+        border: 1px solid #65c6f3;
+        padding: 5px 10px;
+    }
+    .leftBtn, .rightBtn {
+        align-self: center;
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+    .leftBtn button, .rightBtn button {
+        width: 120px;
+        padding: 5px 10px;
+        margin-top: 20px;
+        cursor: pointer;
+        display: none;
+    }
+    .leftBtn button.active, .rightBtn button.active {
+        display: inline-block;
+    }
+    .leftBtn button:hover, .rightBtn button:hover {
+        background: white;
+        color: rgba(8, 98, 160, 1);
+    }
+    .leftBtn button:nth-of-type(2), .rightBtn button:nth-of-type(2) {
+        background: rgba(8, 98, 160, 1);
+        color: white;
+    }
 }

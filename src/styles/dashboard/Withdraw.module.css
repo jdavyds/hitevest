@@ -52,58 +52,118 @@
     color: #575353;
     background: rgba(196, 196, 196, 0.2);
 }
+.tableCont {
+    color: #8C8888;
+}
 .tableHeader {
-    display: flex;
-    justify-content: space-between;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     margin: 20px 0;
 }
-.tableHeader div:nth-child(1) {
-    min-width: 80px;
-}
-.tableHeader div:nth-child(2) {
-    min-width: 200px;
-}
-.tableHeader div:nth-child(3) {
-    min-width: 80px;
-}
-.tableHeader div:nth-child(4) {
-    min-width: 80px;
-}
-.tableHeader div:nth-child(5) {
-    min-width: 200px;
-}
-.tableHeader div:nth-child(6) {
-    min-width: 150px;
-}
-.tableHeader div:nth-child(7) {
-    min-width: 150px;
+.tableHeader div {
+    display: flex;
+    justify-content: flex-start;
 }
 .tableRow {
-    display: flex;
-    justify-content: space-between;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 .tableRow div {
     margin: 10px 0;
     display: flex;
+    justify-content: flex-start;
 }
-.tableRow div:nth-child(1) {
-    min-width: 80px;
+.btn {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background: #0A75BF;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 3px;
 }
-.tableRow div:nth-child(2) {
-    min-width: 200px;
+.totalWith {
+    padding: 10px 20px;
 }
-.tableRow div:nth-child(3) {
-    min-width: 80px;
+.totalWith h2 {
+    color: #0A75BF;
+    font-size: 20px;
 }
-.tableRow div:nth-child(4) {
-    min-width: 80px;
+.totalWith p {
+    font-size: 33px;
 }
-.tableRow div:nth-child(5) {
-    min-width: 200px;
+@media only screen and (max-width: 800px) {
+.topContainer {
+    flex-direction: column;
+    align-items: center;
 }
-.tableRow div:nth-child(6) {
-    min-width: 150px;
+.bottomContainer {
+    border-radius: 10px;
+    padding: 10px 5px;
+    margin-top: 10px;
 }
-.tableRow div:nth-child(7) {
-    min-width: 150px;
+.tableTop {
+    display: flex;
+    flex-direction: column;
+}
+.tableDate button {
+    border-radius: 5px;
+    margin: 0 5px;
+    padding: 5px;
+}
+.tableDate button:nth-child(1) {
+    border-radius: 5px;
+    padding: 5px;
+    height: auto;
+    width: auto;
+}
+.normalDate {
+    color: #575353;
+    background: rgba(196, 196, 196, 0.2);
+}
+.tableCont {
+    overflow-x: scroll;
+}
+.tableTab button {
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.topContainer .tableHeader {
+    font-weight: 600;
+    font-size: 12px;
+    grid-template-columns: 25px 1fr 1fr;
+}
+.topContainer .tableRow {
+    grid-template-columns: 25px 1fr 1fr;
+    font-size: 12px;
+    padding: 7px 0;
+}
+.topContainer .tableHeader div,.topContainer  .tableRow div {
+    min-width: 100px;
+}
+.topContainer .tableHeader div:first-of-type, .topContainer .tableRow div:first-of-type {
+    min-width: 25px;
+    width: 25px;
+}
+.bottomContainer .tableHeader {
+    font-weight: 600;
+    font-size: 12px;
+    grid-template-columns: 25px 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.bottomContainer .tableRow {
+    grid-template-columns: 25px 1fr 1fr 1fr 1fr 1fr 1fr;
+    font-size: 12px;
+    padding: 7px 0;
+}
+.bottomContainer .tableHeader div,.bottomContainer .tableRow div {
+    min-width: 100px;
+}
+.bottomContainer .tableHeader div:first-of-type,.bottomContainer .tableRow div:first-of-type {
+    min-width: 25px;
+    width: 25px;
+}
 }

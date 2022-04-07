@@ -3,6 +3,7 @@ import styles from '../../styles/Login.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { verifyToken } from '../../store/asyncActions/userAsyncActions';
 import Loader from '../../components/Loader'
+import logo from '../../assets/dashboard/logo.svg'
 
 function VerifyToken() {
     const dispatch = useDispatch();
@@ -17,6 +18,7 @@ function VerifyToken() {
             const formDetails = new FormData()
             formDetails.append('email', state.email)
             formDetails.append('otp_token', state.token)
+            sessionStorage.setItem('verifyEmail', JSON.stringify(state.email));
             dispatch(verifyToken(formDetails))
         }
     }
@@ -24,6 +26,9 @@ function VerifyToken() {
         <div className={styles.leftCont}>
             {isLoading && <Loader />}
             <form onSubmit={handleSubmit} className={styles.resetForm}>
+            <div className={styles.logo}>
+                <img src={logo} alt="" />
+            </div>
                 <div className={styles.otpInputCont}>
                         <label htmlFor="pass1">Enter Email</label>
                         <div className={styles.customInput}>

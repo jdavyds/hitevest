@@ -22,8 +22,6 @@ const TransferModal = ({setShowModal}) => {
             dispatch(transferReq(formDetails))
         }
     }
-    
-
     return (
         <div className={styles.container}>
             {isLoading && <Loader />}
