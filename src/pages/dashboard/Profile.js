@@ -8,7 +8,7 @@ import Loader from './../../components/Loader'
 import { useSelector, useDispatch } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faUser } from '@fortawesome/free-solid-svg-icons'
-import { updateProfile } from '../../store/asyncActions/userAsyncActions'
+// import { updateProfile } from '../../store/asyncActions/userAsyncActions'
 const Profile = () => {
     const dispatch = useDispatch()
     const [showModal, setShowModal] = useState(false)
@@ -26,16 +26,6 @@ const Profile = () => {
     function handleEdit1() {
         setEditInput1(!editInput1)
     }
-    // function handleEdit2() {
-    //     const inputs = document.querySelectorAll('.edit2')
-    //     if(edit2 === true) {
-    //         inputs.disabled = true;
-    //     } else{
-    //         inputs.disabled = false;
-    //     }
-    //     setEditInput2(!editInput2)
-    //     setEdit2(!edit2)
-    // }
     function handleSave(e) {
         e.preventDefault();
         if(form.fullName && form.address && form.phone){
@@ -43,7 +33,7 @@ const Profile = () => {
             formDetails.append('name', form.name)
             formDetails.append('address', form.address)
             formDetails.append('phone', form.phone)
-            dispatch(updateProfile(formDetails))
+            // dispatch(updateProfile(formDetails))
         } 
     }
     useEffect(() => {
@@ -76,12 +66,6 @@ const Profile = () => {
                             value={form.fullName}
                             onChange={(e) => setForm((prevState) => ({...prevState, fullName: e.target.value}))} />
                         </label>
-                        {/* <label htmlFor="last name">
-                            Last Name
-                            <input className={editInput1 ? styles.edit1 : ''} type="text" name="last name"
-                            value={form.lastName}
-                            onChange={(e) => setForm((prevState) => ({...prevState, lastName: e.target.value}))} />
-                        </label> */}
                         <label htmlFor="username">
                             Username
                             <input className={editInput1 ? styles.edit1 : ''} type="text" name="username" 
@@ -109,37 +93,6 @@ const Profile = () => {
                         <button className={editInput1 ? styles.active : ''} type='submit' onClick={handleSave}>Save</button>
                     </div>
                 </div>
-                {/* <div className={styles.rightCard}>
-                    <p>
-                    <FontAwesomeIcon icon={ faAddressCard } className={styles.bottomIcon}/>Address Details </p>
-                    <form>
-                        <label htmlFor="adress">
-                            Address
-                            <input type="text" name="address" className={editInput1 ? styles.edit2 : ''} 
-                            onChange={(e) => setForm((prevState) => ({...prevState, address: e.target.value}))}/>
-                        </label>
-                        <label htmlFor="country">
-                            Country
-                            <input type="text" name="country" className={editInput1 ? styles.edit2 : ''} disabled/>
-                        </label>
-                        <label htmlFor="state">
-                            State
-                            <input type="text" name="state" className={editInput1 ? styles.edit2 : ''} disabled/>
-                        </label>
-                        <label htmlFor="city">
-                            City
-                            <input type="email" name="city" className={editInput1 ? styles.edit2 : ''} disabled/>
-                        </label>
-                        <label htmlFor="zip">
-                            Zip
-                            <input type="number" name="zip" className={editInput1 ? styles.edit2 : ''} disabled/>
-                        </label>
-                    </form>
-                    <div className={styles.rightBtn}>
-                        <button className={editInput1 ? styles.active : ''} onClick={handleEdit1}>Cancel</button>
-                        <button className={editInput1 ? styles.active : ''}>Save</button>
-                    </div>
-                </div> */}
             </div>
             {
              showModal && (

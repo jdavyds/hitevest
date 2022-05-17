@@ -3,7 +3,9 @@ import styles from '../../styles/dashboard/Referrals.module.css'
 import calendar from '../../assets/dashboard/calendar.svg'
 
 const Referals = () => {
-    const ref= localStorage.getItem('referrals');
+    const getRef= localStorage.getItem('referrals');
+    const refs = JSON.parse(getRef)
+    const ref = refs.referrals
     const getTotal = localStorage.getItem('totals');
     const totals = JSON.parse(getTotal)
     const total = totals.referrals.data.data.ReferralCount
@@ -56,30 +58,25 @@ const Referals = () => {
                 <div className={styles.tableCont}>
                     <div className={styles.tableHeader}>
                         <div>S/N</div>
+                        <div>Name</div>
+                        <div>Email</div>
+                        <div>Phone Number</div>
                         <div>Date</div>
-                        <div>From</div>
-                        <div>Level</div>
-                        <div>Percent</div>
-                        <div>Amount</div>
-                        <div>Type</div>
                     </div>
-                    {
-                        ref
-                        // .map((row, index) => {
-                        //     return (
-                        //     <div className={styles.tableRow} key={index}>
-                        //         <div>{index + 1}</div>
-                        //         <div>{row.date}</div>
-                        //         <div>{row.id}</div>
-                        //         <div>{null}</div>
-                        //         <div>{row.percent}</div>
-                        //         <div>{row.amount}</div>
-                        //         <div>{row.type}</div>
-                        //     </div>
-                        //     )
-                        // })
+                    { ref.length === 0 && (<div>You have not made any Referrals</div>) }
+                    { ref && (
+                        ref.map((row, index) => {
+                            return (
+                            <div className={styles.tableRow} key={index}>
+                                <div>{index + 1}</div>
+                                <div>{row.name}</div>
+                                <div>{row.email}</div>
+                                <div>{row.phone}</div>
+                                <div>{(row.created_at).slice(0, 10)}</div>
+                            </div>
+                            )
+                        }))
                     }
-                    {/* <button onClick={dispatch(walletBalance)} >click</button> */}
                 </div>
             </div>
         </div>

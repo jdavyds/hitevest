@@ -1,5 +1,5 @@
 import axiosHelper from "../../request/axiosHelper";
-import { updateUser, updateUse, updateBal, clearUse, updateRef, updateMessage, isError, isLoading, verified, logout } from "../slices/userSlice";
+import { updateUser, updateUse, updateBal, clearUser, clearUse, updateRef, updateMessage, isError, isLoading, loaded, verified, logout, updateReg } from "../slices/userSlice";
 
 export const loginUser = (data) => dispatch => {
     dispatch(isLoading())
@@ -49,6 +49,9 @@ export const loginUser = (data) => dispatch => {
 } 
 export const clearNotUser = () => dispatch => {
     dispatch(clearUse(null))
+}
+export const clearUserDet = () => dispatch => {
+    dispatch(clearUser(null))
 }
 export const adminLogin = (data) => dispatch => {
     dispatch(isLoading())
@@ -145,7 +148,9 @@ export const registerReferredUser = (data, code) => dispatch => {
             status: res.data.status,
         };
         dispatch(updateMessage(userData.message));
-        dispatch(updateUser(userData));
+        dispatch(updateReg(userData));
+        sessionStorage.setItem('register', JSON.stringify(userData));
+        dispatch(loaded())
     })
     .catch((err) => {
         console.log(err);
@@ -172,7 +177,9 @@ export const registerUser = (data) => dispatch => {
             status: res.data.status,
         };
         dispatch(updateMessage(userData.message));
-        dispatch(updateUser(userData));
+        dispatch(updateReg(userData));
+        sessionStorage.setItem('register', JSON.stringify(userData));
+        dispatch(loaded())
     })
     .catch((err) => {
         console.log(err);
@@ -218,14 +225,14 @@ export const verifyOtp = (data) => dispatch => {
             accessToken: data.access_token,
             expiresIn: data.expires_in,
             status: data.status,
-        };
-        localStorage.setItem('user', JSON.stringify(userData));
-        dispatch(updateUser(userData));
+        }
+        // dispatch(updateMessage(userData.message))
+        sessionStorage.setItem('verifyOtp', JSON.stringify(userData));
         dispatch(verified());
-        dispatch(depositHistory())
-        dispatch(withdrawHistory())
-    })
-    .catch(() => {
+        dispatch(loaded())
+       })
+    .catch((err) => {
+        console.log(err);
         dispatch(isError())
     })
 }
@@ -517,13 +524,15 @@ export const referrals = () => dispatch => {
         'Cache-Control': 'no-cache',
         "Content-Type": "application/json"
     }
-    axiosHelper.get(`/dashboard/referrals/${tokens.id}`, { headers })
+    axiosHelper.get(`/dashboard/referrals`, { headers })
     .then(res =>{
+        console.log(res);
         const userData = {
-            message: res.message,
-            referrals: res.referrals
+            message: res.data.message,
+            referrals: res.data.referrals
         }
         localStorage.setItem('referrals', JSON.stringify(userData));
+        console.log(userData);
     })
     .catch((res) => {
         console.log(res);

@@ -13,8 +13,8 @@ toast.configure();
 
 const Otp = () => {
     const [otp, setOtp] = useState('')
-    const { userDetails, message } = useSelector(state => state.user);
-    const userId = userDetails.id;
+    const { reg  } = useSelector(state => state.user);
+    const userId = reg.id;
     const {loading} = useSelector(state => state.user)
     const {isVerified} = useSelector(state => state.user)
     const dispatch = useDispatch()
@@ -35,7 +35,7 @@ const Otp = () => {
     }
     useEffect(() => {
         if(userId) {
-            toast.success(message, {
+            toast.success(reg.message, {
                 theme: "light",
                 hideProgressBar: true,
                 autoClose: false,
@@ -43,11 +43,11 @@ const Otp = () => {
         }
     }, [isVerified, navigate]);
 
-    useEffect(() => {
-        if(isVerified) {
-            navigate('/dashboard')
-        }
-    }, [isVerified, navigate])
+    // useEffect(() => {
+    //     if(isVerified) {
+    //         navigate('/login')
+    //     }
+    // }, [isVerified, navigate])
     return (
         <div className={styles.leftCont}>
             {loading && <Loader />}
@@ -76,7 +76,7 @@ const Otp = () => {
                      focusStyle={{outline: 'none'}}
                      numInputs={5}
                     />
-                    <p className={styles.otpText2}>Didn’t get OTP? <button type='submit' onClick={handleResend}>send again</button></p>
+                    <p className={styles.otpText2}>Didn’t get OTP? <button type='submit' className={styles.resend} onClick={handleResend}>send again</button></p>
                 </div>
                 <div className={styles.buttonCont}>
                     <button className={styles.submitButton}>Validate</button>

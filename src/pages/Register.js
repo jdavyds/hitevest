@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from '../styles/Register.module.css'
 import { Link , useNavigate} from 'react-router-dom'
-import { registerReferredUser, registerUser } from '../store/asyncActions/userAsyncActions'
+import { clearUserDet, registerReferredUser, registerUser } from '../store/asyncActions/userAsyncActions'
 import { useDispatch, useSelector } from 'react-redux'
 import Loader from '../components/Loader'
 import { clearNotUser } from '../store/asyncActions/userAsyncActions'
@@ -68,11 +68,23 @@ const Register = () => {
                dispatch(clearNotUser())
            }
    }, [isLoading, info, dispatch])
+    // useEffect(() => {
+    //     if(user && requestMade){
+    //      navigate('/otp-verification')
+    //      dispatch(clearUserDet())
+    //     }
+    //  }, [user, navigate, requestMade, dispatch])
     useEffect(() => {
-        if(user && requestMade){
-         navigate('/otp-verification')
+        const fetchStatus = async () => {
+            const stat = await sessionStorage.getItem('register');
+            const status = await JSON.parse(stat)
+            if(status){
+                sessionStorage.removeItem('register')
+                return navigate('/otp-verification')
+            }
         }
-     }, [user, navigate, requestMade])
+        fetchStatus();
+    }, [isLoading, navigate])
     return (
         <div className={styles.mainContainer}>
             {isLoading && <Loader />}

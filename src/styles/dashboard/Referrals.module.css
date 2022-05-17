@@ -84,7 +84,7 @@
 .bottomContainer .tableHeader {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 100px 1fr 1fr 1fr 1fr;
     margin: 20px 0;
 }
 .bottomContainer .tableHeader div {
@@ -94,7 +94,7 @@
 .bottomContainer .tableRow {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 100px 1fr 1fr 1fr 1fr;
 }
 .bottomContainer .tableRow div {
     margin: 10px 0;
@@ -140,10 +140,10 @@
     .tableHeader {
         font-weight: 600;
         font-size: 12px;
-        grid-template-columns: 25px 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 25px 1fr 1fr 1fr 1fr;
     }
     .tableRow {
-        grid-template-columns: 25px 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 25px 1fr 1fr 1fr 1fr;
         font-size: 12px;
         padding: 7px 0;
     }
